@@ -13,9 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Basswood Creative | Software & Web Development",
+  metadataBase: new URL("https://basswoodcreative.com"),
+  title: {
+    default: "Basswood Creative — Protocol-grade frontends",
+    template: "%s — Basswood Creative",
+  },
   description:
-    "Basswood Creative builds modern, performant websites and software. Let's bring your vision to life.",
+    "Frontend consultancy for teams whose interfaces carry real user funds — dApps, governance portals, on-chain position management, and LLM integrations. Built on eight years inside MakerDAO / Sky Protocol.",
 };
 
 export default function RootLayout({
