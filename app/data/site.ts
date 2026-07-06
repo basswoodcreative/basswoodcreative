@@ -1,5 +1,7 @@
 export const EMAIL = "phil@basswoodcreative.com";
 export const MAILTO = `mailto:${EMAIL}`;
+export const X_HANDLE = "@bainpm";
+export const X_URL = "https://x.com/bainpm";
 
 type Stat = {
   value: string;

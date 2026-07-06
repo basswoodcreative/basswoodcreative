@@ -1,4 +1,4 @@
-import { EMAIL, MAILTO } from "../data/site";
+import { EMAIL, MAILTO, X_HANDLE, X_URL } from "../data/site";
 
 export function Footer() {
   return (
@@ -11,6 +11,13 @@ export function Footer() {
             className="transition-colors hover:text-foreground"
           >
             {EMAIL}
+          </a>
+          <a
+            href={X_URL}
+            rel="noopener"
+            className="transition-colors hover:text-foreground"
+          >
+            {X_HANDLE}
           </a>
           <a
             href="https://philbain.com"
