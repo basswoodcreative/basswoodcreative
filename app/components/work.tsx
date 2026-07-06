@@ -1,7 +1,7 @@
 const PROJECTS = [
   {
     title: "Sky.money webapp",
-    body: "Flagship UI of the Sky Protocol (formerly MakerDAO): several products under one integrated interface, the protocol's official frontend, fully designed and built by Jetstream — the eight-person team Basswood's principal co-founded and led — with direct input from the protocol's founder. Five networks (Ethereum + Arbitrum, Base, Optimism, Unichain), wallet integrations, geo-specific builds. The protocol holds $6B in TVL; the Savings module alone, $5.6B.",
+    body: "Flagship UI of the Sky Protocol (formerly MakerDAO): several products under one integrated interface, the protocol's official frontend, fully designed and built by Jetstream — the eight-person team Basswood's principal co-founded and led — with direct input from the protocol's founder. Five networks (Ethereum + Arbitrum, Base, Optimism, Unichain), wallet integrations, geo-specific builds. The Sky ecosystem holds ~$19.8B in TVL per its official analytics; the Savings module alone, $5.5B.",
     links: [
       { label: "app.sky.money", href: "https://app.sky.money" },
       {

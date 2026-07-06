@@ -1,15 +1,18 @@
 const SHAPES = [
   {
     name: "Fractional frontend lead",
-    body: "A centerpiece of the practice: senior ownership of your flagship UI, part-time and ongoing.",
+    tagline: "Your flagship UI, owned.",
+    body: "A centerpiece of the practice: senior ownership of your interface — architecture, product decisions, founder-level requirements intake — part-time and ongoing.",
   },
   {
     name: "Project",
-    body: "Defined scope, defined end date.",
+    tagline: "Scoped, shipped, handed over.",
+    body: "A defined build with a defined end date — a new dApp, a governance portal, an LLM integration. Scoped together up front, delivered documented, yours to run.",
   },
   {
     name: "Retainer",
-    body: "Ongoing capacity for teams that ship continuously.",
+    tagline: "Senior judgment, on call.",
+    body: "Standing capacity for teams that ship continuously — features, reviews, and architecture without spinning up a new engagement each time.",
   },
 ];
 
@@ -33,6 +36,9 @@ export function Engagements() {
               <h3 className="text-base font-semibold tracking-tight">
                 {shape.name}
               </h3>
+              <p className="mt-1 text-sm font-medium text-muted italic">
+                {shape.tagline}
+              </p>
               <p className="mt-3 text-sm leading-relaxed text-muted">
                 {shape.body}
               </p>

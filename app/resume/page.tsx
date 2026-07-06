@@ -159,12 +159,13 @@ export default function Resume() {
               several products under one integrated UI, the official frontend of
               the Sky Ecosystem, fully designed and developed by Jetstream with
               input from the founder, executives, and third-party design
-              consultants. The webapp fronts a protocol holding{" "}
+              consultants. The webapp fronts a protocol ecosystem holding{" "}
               <strong className="font-medium text-foreground">
-                $6B TVL (peak ~$20B, 2021)
-              </strong>
-              , whose Savings module alone holds{" "}
-              <strong className="font-medium text-foreground">$5.6B</strong>,
+                $19.8B TVL
+              </strong>{" "}
+              (per Sky&apos;s official analytics), whose Savings module alone
+              holds{" "}
+              <strong className="font-medium text-foreground">$5.5B</strong>,
               behind the{" "}
               <strong className="font-medium text-foreground">
                 #3 and #4 largest stablecoins (USDS + DAI, $12.8B combined)

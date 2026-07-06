@@ -18,10 +18,14 @@ const GROUPS = [
         lead: "Complex on-chain positions made legible and safe",
         body: "vault and collateral management UIs in the mold of Multi-Collateral DAI CDP tooling.",
       },
-      {
-        lead: "The data layer behind the UI",
-        body: "subgraph architecture and deployment, blockchain indexers, and the supporting infrastructure: hosting, proxying, analytics, monitoring, compliance tooling.",
-      },
+      // {
+      //   lead: "A design system your frontends actually follow",
+      //   body: "from building an early DAO-wide design system for Maker's frontends to translating Sky.money's agency-commissioned design files into the design system and Tailwind theme the webapp runs on today.",
+      // },
+      // {
+      //   lead: "The data layer behind the UI",
+      //   body: "subgraph architecture and deployment, blockchain indexers, and the supporting infrastructure: hosting, proxying, analytics, monitoring, compliance tooling.",
+      // },
     ],
   },
   {
@@ -64,7 +68,7 @@ export function Services() {
           Services
         </p>
         <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-          One senior engineer, end to end.
+          Protocol to pixels, end to end.
         </h2>
         <div className="mt-14 grid gap-12 md:grid-cols-3">
           {GROUPS.map((group) => (
