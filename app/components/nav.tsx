@@ -110,7 +110,7 @@ export function Nav() {
             </span>
             <a
               href={MAILTO}
-              className="btn-p hidden sm:inline-flex"
+              className="btn-p hidden whitespace-nowrap sm:inline-flex"
               style={{ padding: "8px 16px", fontSize: "0.85rem" }}
             >
               Start a conversation

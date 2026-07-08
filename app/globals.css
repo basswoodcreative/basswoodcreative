@@ -503,7 +503,8 @@ h2.sec {
 .btn-g {
   display: inline-flex;
   align-items: center;
-  background: none;
+  /* opaque: the hero art must not show through (Phil, 2026-07-08 mobile) */
+  background: var(--sf);
   border: 1px solid var(--bd);
   border-radius: var(--r);
   color: var(--fg);
