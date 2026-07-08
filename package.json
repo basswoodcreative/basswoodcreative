@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/fetch-metrics.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
