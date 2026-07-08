@@ -957,6 +957,7 @@ h2.sec {
   body {
     background: #fff;
     color: #111;
+    transition: none;
   }
 
   main {
