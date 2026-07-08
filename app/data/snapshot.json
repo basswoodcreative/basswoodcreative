@@ -1,13 +1,13 @@
 {
-  "fetched_at": "2026-07-08T17:15:45.850Z",
+  "fetched_at": "2026-07-08T17:24:21.889Z",
   "source": "info-sky.blockanalitica.com/api/v1",
   "current": {
-    "sky_ecosystem_tvl": 19736014097.861355,
-    "sky_ecosystem_wallet_count": 761678,
-    "sky_savings_rate_tvl": 5402727697.004679,
+    "sky_ecosystem_tvl": 19734310730.274193,
+    "sky_ecosystem_wallet_count": 761680,
+    "sky_savings_rate_tvl": 5401584793.196364,
     "sky_savings_rate_apy": 0.036,
-    "total_save": 5621443537.748745,
-    "ssr_depositor_count": 5827
+    "total_save": 5620299695.99019,
+    "ssr_depositor_count": 5828
   },
   "prev": {
     "sky_ecosystem_tvl": 19830837556.53661,
@@ -417,7 +417,7 @@
     },
     {
       "date": "2026-07-08",
-      "total_save": 5621443537.748745
+      "total_save": 5620299695.99019
     }
   ]
 }

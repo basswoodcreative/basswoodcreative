@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Geist, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -26,6 +26,27 @@ export const metadata: Metadata = {
   },
   description:
     "Frontend consultancy for teams whose interfaces carry real user funds — dApps, governance portals, on-chain position management, and LLM integrations. Built on eight years inside MakerDAO / Sky Protocol.",
+  openGraph: {
+    type: "website",
+    siteName: "Basswood Creative",
+    url: "https://basswoodcreative.com",
+    title: "Basswood Creative — Protocol-grade frontends",
+    description:
+      "Frontend consultancy for teams whose interfaces carry real user funds — dApps, governance portals, on-chain position management, and LLM integrations.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Basswood Creative — Protocol-grade frontends",
+    description:
+      "Frontend consultancy for teams whose interfaces carry real user funds.",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0A0908" },
+    { color: "#ECEDEF" },
+  ],
 };
 
 // Runs before paint: saved choice wins, OS preference otherwise. The manual
