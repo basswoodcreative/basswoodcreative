@@ -62,8 +62,8 @@ const GROUPS = [
 
 export function Services() {
   return (
-    <section id="services" className="scroll-mt-20 border-t border-border">
-      <div className="mx-auto w-full max-w-5xl px-6 py-20 sm:px-12 sm:py-28">
+    <section id="services" className="component">
+      <div>
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
           Services
         </p>

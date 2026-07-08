@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export function InsightsTeaser() {
   return (
-    <section className="border-t border-border">
-      <div className="mx-auto w-full max-w-5xl px-6 py-16 sm:px-12 sm:py-20">
+    <section className="component" id="insights">
+      <div>
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
           Insights
         </p>

@@ -1,90 +1,219 @@
-const PROJECTS = [
-  {
-    title: "Sky.money webapp",
-    body: "Flagship UI of the Sky Protocol (formerly MakerDAO): several products under one integrated interface, the protocol's official frontend, fully designed and built by Jetstream — the eight-person team Basswood's principal co-founded and led — with direct input from the protocol's founder. Five networks (Ethereum + Arbitrum, Base, Optimism, Unichain), wallet integrations, geo-specific builds. The Sky ecosystem holds ~$19.8B in TVL per its official analytics; the Savings module alone, $5.5B.",
-    links: [
-      { label: "app.sky.money", href: "https://app.sky.money" },
-      {
-        label: "github.com/jetstreamgg/tarmac",
-        href: "https://github.com/jetstreamgg/tarmac",
-      },
-    ],
-    featured: true,
-  },
-  {
-    title: "Sky voting portal",
-    body: "Oversaw the refactor and deployment accompanying the MKR→SKY token conversion (90%+ of a ~$1.2B token supply migrated); the latest of a portal lineage that has carried ~1,350 governance polls with ~$400M of voting power participating today.",
-    links: [{ label: "vote.sky.money", href: "https://vote.sky.money" }],
-  },
-  {
-    title: "Widgets & Hooks (open source)",
-    body: "Self-contained UI modules for Sky's financial products and the React hooks that interface with its smart contracts — the SDK layer that lets other teams build on the protocol.",
-    links: [
-      {
-        label: "github.com/jetstreamgg/tarmac",
-        href: "https://github.com/jetstreamgg/tarmac",
-      },
-    ],
-  },
-  {
-    title: "LLM chatbot frontend",
-    body: "Led the team that delivered the production frontend for Sky's ecosystem assistant (live in non-U.S. markets), plus the documentation-corpus pipeline that generated its training data, FAQ modules, and tooltips. The LLM itself was built and managed by a separate organization.",
-    links: [],
-  },
-  {
-    title: "Black Thursday — March 12, 2020",
-    body: "On the front line during the crash, deploying an emergency auctions dashboard overnight to combat opportunistic liquidation bots threatening bad debt in the system.",
-    links: [
-      {
-        label: "github.com/b-pmcg/auction-helper",
-        href: "https://github.com/b-pmcg/auction-helper",
-      },
-    ],
-  },
-];
+// Selected Work as six exhibit components on the board — the trunk weaves
+// between them (Decision 12; content signed off by Phil 2026-07-07, record:
+// vault "Phase 5 / 54"). Captures are real, dated, and refresh via
+// scripts/capture.mjs (B6).
 
 export function Work() {
   return (
-    <section id="work" className="scroll-mt-20 border-t border-border">
-      <div className="mx-auto w-full max-w-5xl px-6 py-20 sm:px-12 sm:py-28">
-        <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
-          Selected work
+    <>
+      <section className="component exh-intro" id="work">
+        <span className="silk seclabel">SELECTED WORK</span>
+        <h2 className="sec">Shipped, public, verifiable.</h2>
+        <p className="standfirst" style={{ marginBottom: 0 }}>
+          Every claim below links to something you can open — the live product,
+          the repo, or both.
         </p>
-        <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-          Shipped, public, verifiable — check the commits.
-        </h2>
-        <div className="mt-14 grid gap-6 sm:grid-cols-2">
-          {PROJECTS.map((project) => (
-            <article
-              key={project.title}
-              className={`rounded-2xl border border-border p-7 ${
-                project.featured ? "sm:col-span-2" : ""
-              }`}
-            >
-              <h3 className="text-lg font-semibold tracking-tight">
-                {project.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted">
-                {project.body}
-              </p>
-              {project.links.length > 0 ? (
-                <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
-                  {project.links.map((link) => (
-                    <a
-                      key={link.href}
-                      href={link.href}
-                      rel="noopener"
-                      className="font-mono text-xs text-muted underline decoration-border underline-offset-4 transition-colors hover:text-foreground"
-                    >
-                      {link.label} ↗
-                    </a>
-                  ))}
-                </div>
-              ) : null}
-            </article>
-          ))}
+      </section>
+
+      <section className="component exh" id="ex-flagship">
+        <div className="exhibit rv">
+          <h3>Sky.money — the flagship UI</h3>
+          <p className="blurb">
+            The interface of the $19.8B Sky ecosystem — team-led from the
+            ground-up redesign through today&apos;s five-network app.
+          </p>
+          <figure className="fig" style={{ margin: 0 }}>
+            <div className="urlbar silk">
+              <span className="live">●</span> app.sky.money
+            </div>
+            <img
+              src="/work/sky-money-app.jpg"
+              alt="app.sky.money — Balances view of the live Sky.money application"
+              loading="lazy"
+            />
+            <figcaption className="silk">
+              FIG. 01 — CAPTURED 2026-07-07 · LIVE PRODUCT
+            </figcaption>
+          </figure>
+          <div className="kv">
+            <span>ROLE · TEAM LEAD</span>
+            <span>NETWORKS · 5</span>
+            <span>
+              <a href="https://github.com/jetstreamgg/tarmac" rel="noopener">
+                REPO · JETSTREAMGG/TARMAC ↗
+              </a>
+            </span>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="component exh" id="ex-gov">
+        <div className="exhibit rv">
+          <h3>Governance, reinvented</h3>
+          <p className="blurb">
+            As the governance token was upgraded, so was the portal that
+            controls the protocol — the new SKY portal and the legacy MKR
+            portal, both live today.
+          </p>
+          <div className="gov2">
+            <figure className="fig" style={{ margin: 0 }}>
+              <div className="urlbar silk">
+                <span className="live">●</span> vote.sky.money
+              </div>
+              <img
+                src="/work/vote-sky-money.jpg"
+                alt="vote.sky.money — Sky Governance Voting Portal, latest executive with 7.02B SKY supporting"
+                loading="lazy"
+              />
+              <figcaption className="silk">
+                FIG. 02A — SKY PORTAL (V3) · CAPTURED 2026-07-07
+              </figcaption>
+            </figure>
+            <figure className="fig" style={{ margin: 0 }}>
+              <div className="urlbar silk">
+                <span className="live">●</span> vote.makerdao.com
+              </div>
+              <img
+                src="/work/vote-makerdao.jpg"
+                alt="vote.makerdao.com — legacy Maker Governance Voting Portal, still active"
+                loading="lazy"
+              />
+              <figcaption className="silk">
+                FIG. 02B — LEGACY MKR PORTAL (V2) · STILL ACTIVE
+              </figcaption>
+            </figure>
+          </div>
+          <div className="kv">
+            <span>~$400M VOTING POWER / POLL</span>
+            <span>~1,350 POLLS</span>
+            <span>258 EXECUTIVE SPELLS</span>
+            <span>
+              <a
+                href="https://github.com/skybase-foundation/governance-portal-v2"
+                rel="noopener"
+              >
+                REPO · GOVERNANCE-PORTAL-V2 ↗
+              </a>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section className="component exh" id="ex-widgets">
+        <div className="exhibit rv">
+          <h3>Widgets + Hooks — the open-source module kit</h3>
+          <p className="blurb">
+            Self-contained UI modules for Sky protocol financial products,
+            paired with a hooks package that speaks directly to the contracts.
+          </p>
+          <div className="rack" aria-label="The five widget modules">
+            <div className="module">
+              <span className="pin"></span>
+              <span className="mname">SAVINGS</span>
+            </div>
+            <div className="module">
+              <span className="pin"></span>
+              <span className="mname">REWARDS</span>
+            </div>
+            <div className="module">
+              <span className="pin"></span>
+              <span className="mname">UPGRADE</span>
+            </div>
+            <div className="module">
+              <span className="pin"></span>
+              <span className="mname">TRADE</span>
+            </div>
+            <div className="module">
+              <span className="pin"></span>
+              <span className="mname">BALANCES</span>
+            </div>
+          </div>
+          <div className="kv">
+            <span>MODULES · 5</span>
+            <span>OPEN SOURCE</span>
+            <span>
+              <a href="https://github.com/jetstreamgg/tarmac" rel="noopener">
+                WIDGETS ↗
+              </a>
+            </span>
+            <span>
+              <a href="https://github.com/jetstreamgg/tarmac" rel="noopener">
+                HOOKS ↗
+              </a>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <section className="component exh" id="ex-llm">
+        <div className="exhibit rv">
+          <div className="llm2">
+            <div>
+              <h3>An LLM assistant, live inside the product</h3>
+              <p className="blurb" style={{ marginBottom: 0 }}>
+                Team-led delivery of the production frontend for Sky&apos;s
+                chatbot, plus the documentation pipeline that generated its
+                training data. Shipped to non-U.S. markets.
+              </p>
+            </div>
+            <figure className="fig" style={{ margin: 0 }}>
+              <div className="urlbar silk">app.sky.money · non-U.S.</div>
+              <img
+                src="/work/chat-assistant.jpg"
+                alt="The chat assistant widget inside Sky.money: 'Hi, I'm your AI-powered chatbot assistant' with suggested questions about Sky Protocol and USDS"
+                loading="lazy"
+              />
+              <figcaption className="silk">
+                FIG. 03 — CHAT ASSISTANT · PRODUCT UI · 2026-07-07
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section className="component exh" id="ex-bt">
+        <div className="exhibit rv">
+          <h3>Black Thursday</h3>
+          <div className="dispatch">
+            <span className="date">2020-03-12 — DEPLOYED OVERNIGHT</span>
+            On the day the market broke, opportunistic bots were winning
+            liquidation auctions for near-zero bids, threatening bad debt in
+            the system. An emergency auctions dashboard, shipped overnight, put
+            honest keepers back in the fight.
+            <div className="kv" style={{ marginTop: 12 }}>
+              <span>
+                <a href="https://github.com/b-pmcg/auction-helper" rel="noopener">
+                  REPO · B-PMCG/AUCTION-HELPER ↗
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="component exh" id="ex-daijs">
+        <div className="exhibit rv">
+          <h3>dai.js — the original SDK</h3>
+          <p className="blurb" style={{ marginBottom: 0 }}>
+            The service-based SDK the early protocol frontends were built on —
+            archived now, still citable.{" "}
+            <span
+              className="kv"
+              style={{
+                display: "inline-flex",
+                margin: "0 0 0 10px",
+                verticalAlign: "middle",
+              }}
+            >
+              <span>
+                <a href="https://github.com/sky-ecosystem/dai.js" rel="noopener">
+                  REPO · SKY-ECOSYSTEM/DAI.JS ↗
+                </a>
+              </span>
+            </span>
+          </p>
+        </div>
+      </section>
+    </>
   );
 }

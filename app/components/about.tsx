@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-20 border-t border-border">
-      <div className="mx-auto w-full max-w-5xl px-6 py-20 sm:px-12 sm:py-28">
+    <section id="about" className="component">
+      <div>
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
           About the principal
         </p>

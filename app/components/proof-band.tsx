@@ -2,8 +2,8 @@ import { STATS } from "../data/site";
 
 export function ProofBand() {
   return (
-    <section className="border-t border-border">
-      <div className="mx-auto w-full max-w-5xl px-6 py-16 sm:px-12 sm:py-20">
+    <section className="component" id="proof">
+      <div>
         <p className="max-w-3xl text-sm leading-relaxed text-muted">
           <span className="font-medium text-foreground">
             The numbers behind the work

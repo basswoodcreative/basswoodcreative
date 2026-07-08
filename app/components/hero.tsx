@@ -2,7 +2,7 @@ import { MAILTO } from "../data/site";
 
 export function Hero() {
   return (
-    <section className="mx-auto w-full max-w-5xl px-6 py-24 sm:px-12 sm:py-32">
+    <section className="component" id="hero">
       <h1 className="max-w-3xl text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
         Protocol-grade frontends.
       </h1>

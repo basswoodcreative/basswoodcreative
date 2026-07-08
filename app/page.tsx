@@ -1,4 +1,5 @@
 import { Nav } from "./components/nav";
+import { Board } from "./components/board";
 import { Hero } from "./components/hero";
 import { ProofBand } from "./components/proof-band";
 import { Services } from "./components/services";
@@ -13,15 +14,19 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col font-sans">
       <Nav />
+      {/* every section is a component ("chip") sitting on the board; the
+          bus weaves between them in the gaps (components/board.tsx) */}
       <main className="flex-1">
-        <Hero />
-        <ProofBand />
-        <Services />
-        <Work />
-        <Engagements />
-        <About />
-        <InsightsTeaser />
-        <ClosingCta />
+        <Board>
+          <Hero />
+          <ProofBand />
+          <Services />
+          <Work />
+          <Engagements />
+          <About />
+          <InsightsTeaser />
+          <ClosingCta />
+        </Board>
       </main>
       <Footer />
     </div>

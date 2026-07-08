@@ -126,6 +126,294 @@ body {
   text-transform: uppercase;
 }
 
+/* ══════════ THE BOARD (B3 — ported from prototype v10) ══════════
+   Sections are components ("chips") on a circuit board; the bus weaves
+   between them in the gaps. Drawn client-side by components/board.tsx —
+   without JS the content renders and the board is simply absent. */
+
+.board {
+  position: relative;
+}
+#boardsvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  /* the SETTLED terminus draws 44px below the last component — below the
+     board div's own height, which ends at that component's border box */
+  overflow: visible;
+}
+#boardsvg .bus {
+  stroke: var(--trace-lit);
+  stroke-width: 1;
+  fill: none;
+  stroke-linejoin: round;
+}
+#boardsvg .bus.outer {
+  stroke: var(--trace);
+}
+#boardsvg .padring {
+  fill: var(--board);
+  stroke: var(--trace-lit);
+  stroke-width: 1;
+  transition: stroke 0.3s;
+}
+#boardsvg .padcore {
+  fill: var(--trace-lit);
+  transition: fill 0.3s, opacity 0.3s;
+  opacity: 0.5;
+}
+#boardsvg .pad.lit .padring {
+  stroke: var(--g1);
+}
+#boardsvg .pad.lit .padcore {
+  fill: var(--g2);
+  opacity: 1;
+}
+#boardsvg .padlabel {
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  fill: var(--mut);
+}
+#boardsvg .padlabel.lit {
+  fill: var(--g1);
+}
+#pulse-trail {
+  stroke: var(--g1);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  opacity: 0.6;
+}
+#pulse-head {
+  fill: var(--g2);
+  stroke: var(--g1);
+  stroke-width: 1.2;
+}
+
+/* the chips */
+.component {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  margin: 0 auto 96px;
+  background: var(--sf);
+  border: 1px solid var(--bd);
+  border-radius: var(--r);
+  padding: 44px 44px 40px;
+  scroll-margin-top: 84px;
+}
+@media (max-width: 1020px) {
+  .component {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+@media (max-width: 640px) {
+  .component {
+    padding: 28px 22px;
+    margin-bottom: 72px;
+  }
+}
+.board > .component:first-of-type {
+  margin-top: 56px;
+}
+.component.inverted {
+  background: var(--pn);
+  color: var(--pn-fg);
+  border-color: var(--pn-bd);
+}
+
+/* section type roles on the board */
+h2.sec {
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+.seclabel {
+  display: block;
+  color: var(--mut);
+  opacity: 0.75;
+  margin: 0 0 12px;
+}
+.inverted .seclabel {
+  color: var(--pn-fg);
+  opacity: 0.5;
+}
+.standfirst {
+  color: var(--mut);
+  margin: 0 0 26px;
+  max-width: 60ch;
+}
+.inverted .standfirst {
+  color: var(--pn-fg);
+  opacity: 0.7;
+}
+
+/* scroll reveal — motion only when the visitor allows it */
+@media (prefers-reduced-motion: no-preference) {
+  .rv {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .rv.in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- work: exhibit components ---------- */
+.component.exh {
+  padding: 28px 32px 26px;
+  margin-bottom: 80px;
+}
+.component.exh-intro {
+  padding-bottom: 30px;
+  margin-bottom: 80px;
+}
+@media (max-width: 640px) {
+  .component.exh {
+    padding: 22px 20px;
+    margin-bottom: 64px;
+  }
+}
+.exhibit {
+  margin: 0;
+  padding: 0;
+  border-top: 0;
+}
+.exhibit h3 {
+  font-size: 1.08rem;
+  margin: 0 0 4px;
+}
+.exhibit .blurb {
+  color: var(--mut);
+  font-size: 0.92rem;
+  margin: 0 0 16px;
+  max-width: 62ch;
+}
+.kv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.kv span {
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mut);
+  border: 1px solid var(--bd);
+  border-radius: var(--r);
+  padding: 3px 9px;
+}
+.kv a {
+  color: var(--g1);
+  text-decoration: none;
+}
+.fig {
+  border: 1px solid var(--bd);
+  border-radius: var(--r);
+  overflow: hidden;
+  background: var(--raised);
+}
+.fig .urlbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 14px;
+  border-bottom: 1px solid var(--bd);
+  color: var(--mut);
+}
+.fig .urlbar .live {
+  color: var(--g1);
+}
+.fig img {
+  width: 100%;
+  display: block;
+}
+.fig figcaption {
+  padding: 9px 14px;
+  border-top: 1px solid var(--bd);
+  color: var(--mut);
+}
+.gov2 {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 14px;
+  align-items: start;
+}
+@media (max-width: 760px) {
+  .gov2 {
+    grid-template-columns: 1fr;
+  }
+}
+.llm2 {
+  display: grid;
+  grid-template-columns: 1fr 224px;
+  gap: 28px;
+  align-items: start;
+}
+@media (max-width: 700px) {
+  .llm2 {
+    grid-template-columns: 1fr;
+  }
+  .llm2 .fig {
+    max-width: 224px;
+  }
+}
+.rack {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+@media (max-width: 640px) {
+  .rack {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.rack .module {
+  border: 1px solid var(--bd);
+  border-radius: var(--r);
+  background: var(--raised);
+  padding: 14px 8px 12px;
+  text-align: center;
+}
+.rack .module .pin {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--g1), var(--g2));
+  margin: 0 auto 10px;
+  border-radius: 1px;
+}
+.rack .module .mname {
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+}
+.dispatch {
+  border: 1px solid var(--bd);
+  border-left: 3px solid var(--g1);
+  border-radius: var(--r);
+  background: var(--raised);
+  padding: 14px 18px;
+  font-size: 0.92rem;
+  color: var(--mut);
+}
+.dispatch .date {
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.07em;
+  color: var(--g1);
+  display: block;
+  margin-bottom: 6px;
+}
+/* ══════════ end of board styles ══════════ */
+
 /* /resume prints as the shareable document: chrome hidden, ink-friendly */
 @media print {
   .print-hidden {

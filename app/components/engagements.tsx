@@ -18,8 +18,8 @@ const SHAPES = [
 
 export function Engagements() {
   return (
-    <section className="border-t border-border">
-      <div className="mx-auto w-full max-w-5xl px-6 py-20 sm:px-12 sm:py-28">
+    <section className="component" id="engagements">
+      <div>
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
           Consulting engagements
         </p>
