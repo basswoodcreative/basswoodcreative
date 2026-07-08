@@ -1,31 +1,90 @@
 @import "tailwindcss";
 
+/* ══════════════════════════════════════════════════════════════════
+   THEME — the only block you need to touch.
+   Edit a value, save, refresh. Everything below reads these tokens.
+   (Ported verbatim from design/pulse-prototype.html — v10, the design
+   of record. Edit here AND there until the prototype retires.)
+
+     --board       page background (the circuit board itself)
+     --sf          component background (the "chips" sitting on the board)
+     --raised      elevated surfaces: nav, menu overlay, inner cards
+     --fg          main text
+     --mut         secondary text
+     --bd          hairline borders
+     --trace       board traces at rest
+     --trace-lit   energized traces + resting pad rings
+     --sig         solid accent (focus rings, small marks, fallbacks)
+     --g1 → --g2   THE GRADIENT: buttons, proof numerals, the pulse,
+                   lit pads, sparkline endpoint
+     --pn/--pn-fg/--pn-bd  the two dark panel components (proof, contact)
+     --r           corner radius ("take the edge off")
+   ══════════════════════════════════════════════════════════════════ */
+
+:root,
+:root[data-mode="light"] {          /* SILVER — the default */
+  color-scheme: light;
+  --board: #ECEDEF; --sf: #F8F9FA; --raised: #FFFFFF;
+  --fg: #1A1B1E; --mut: #5F6368; --bd: #D7D9DD;
+  --trace: #CDD0D5; --trace-lit: #AEB3BA;
+  --sig: #B45309;
+  --g1: #D97706; --g2: #DB2777;
+  --pn: #15161A; --pn-fg: #ECEDEF; --pn-bd: #33353B;
+  --r: 6px;
+}
+:root[data-mode="dark"] {           /* warm dark, from rounds 1–2 */
+  color-scheme: dark;
+  --board: #0A0908; --sf: #14120F; --raised: #1C1915;
+  --fg: #EDE9E1; --mut: #9C968A; --bd: #2A2620;
+  --trace: #2E2A22; --trace-lit: #4A4335;
+  --sig: #E8A33D;
+  --g1: #E8A33D; --g2: #F0648C;
+  --pn: #171410; --pn-fg: #EDE9E1; --pn-bd: #332E26;
+  --r: 6px;
+}
+/* ══════════════════════ end of theme ══════════════════════ */
+
+/* Type roles (Decision 12): display = Bricolage Grotesque 600,
+   data = IBM Plex Mono, body = Geist. Font files load in layout.tsx. */
 :root {
-  --background: #fafaf9;
-  --foreground: #1c1917;
-  --accent: #292524;
-  --muted: #78716c;
-  --border: #e7e5e4;
+  --display-wt: 600;
+  --display-tr: -0.015em;
+}
+
+/* Legacy token names — the pre-Phase-5 components read these.
+   They resolve into the theme above; retire them as B3/B4 rebuild
+   each section onto the board tokens directly. */
+:root {
+  --background: var(--board);
+  --foreground: var(--fg);
+  --muted: var(--mut);
+  --border: var(--bd);
+  --accent: color-mix(in srgb, var(--fg) 82%, var(--board));
 }
 
 @theme inline {
+  /* legacy names (existing components) */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-border: var(--border);
+  /* board tokens (B3+ components) */
+  --color-board: var(--board);
+  --color-surface: var(--sf);
+  --color-raised: var(--raised);
+  --color-trace: var(--trace);
+  --color-trace-lit: var(--trace-lit);
+  --color-sig: var(--sig);
+  --color-g1: var(--g1);
+  --color-g2: var(--g2);
+  --color-panel: var(--pn);
+  --color-panel-fg: var(--pn-fg);
+  --color-panel-bd: var(--pn-bd);
+  /* type roles */
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0c0a09;
-    --foreground: #fafaf9;
-    --accent: #e7e5e4;
-    --muted: #a8a29e;
-    --border: #292524;
-  }
+  --font-mono: var(--font-plex-mono);
+  --font-display: var(--font-bricolage);
 }
 
 html {
@@ -33,13 +92,38 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--board);
+  color: var(--fg);
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
-::selection {
-  background: var(--foreground);
-  color: var(--background);
+@layer base {
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-bricolage), system-ui, sans-serif;
+    font-weight: var(--display-wt);
+    letter-spacing: var(--display-tr);
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--sig);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--g1);
+    color: var(--board);
+  }
+}
+
+/* silkscreen label — the mono micro-caption used across the board */
+@utility silk {
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
 }
 
 /* /resume prints as the shareable document: chrome hidden, ink-friendly */
