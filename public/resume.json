@@ -1,0 +1,225 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json",
+  "basics": {
+    "name": "Phil Bain",
+    "label": "Independent Software Consultant — Protocol-grade frontends",
+    "email": "phil@basswoodcreative.com",
+    "url": "https://basswoodcreative.com",
+    "summary": "Roughly 11 years of professional software development, including eight years at Sky Protocol (formerly MakerDAO), 2018–2026 — progressing from developer to co-founder and team lead of Jetstream, the independent Swiss association that served as the primary UI development team for the Sky Protocol, delivering the flagship Sky.money webapp with input from the founder, executives, and third-party design consultants. Through Basswood Creative, builds protocol-grade frontends for teams whose interfaces carry real user funds: governance dashboards, on-chain position management, SDKs, and smart-contract integration in React and TypeScript. Has already shipped AI in a DeFi product — leading the team that delivered the production frontend for Sky's LLM chatbot (production, non-U.S. markets) — and built the documentation-corpus pipeline that generated its LLM training data. Available for fractional frontend lead, project-based, and retainer engagements — remote, with eight years of remote delivery behind it. Booking engagements from September 2026.",
+    "location": {
+      "countryCode": "US"
+    },
+    "profiles": [
+      {
+        "network": "X",
+        "username": "bainpm",
+        "url": "https://x.com/bainpm"
+      },
+      {
+        "network": "GitHub",
+        "username": "b-pmcg",
+        "url": "https://github.com/b-pmcg"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Basswood Creative",
+      "position": "Founder & Principal Consultant",
+      "url": "https://basswoodcreative.com",
+      "startDate": "2026",
+      "summary": "Independent software consultancy building protocol-grade frontends for teams whose interfaces carry real user funds — governance dashboards, on-chain position management, SDKs, and smart-contract integration in React and TypeScript, with LLM/chatbot integration and fully AI-assisted delivery.",
+      "highlights": [
+        "Fractional frontend lead, project-based, and retainer engagements, delivered fully remote.",
+        "Web3/crypto frontend focus, plus LLM/chatbot integration and advisory on optimizing organizations' own coding-agent workflows.",
+        "Booking engagements from September 2026."
+      ]
+    },
+    {
+      "name": "Jetstream",
+      "position": "Co-Founder & Team Lead",
+      "location": "Remote",
+      "description": "Independent Swiss association contracted by MakerDAO governance as the primary UI development team for the Sky Protocol.",
+      "startDate": "2023",
+      "endDate": "2026",
+      "summary": "Co-founded and led Jetstream — a team of 8 (5 developers, 1 designer, 1 QA engineer, 1 project manager) — owning architectural decisions, product feature design, daily operations, requirements intake from executives including the founder, and serving as a multisig signer, with budgets and work agreements ratified by governance.",
+      "highlights": [
+        "Shipped the flagship Sky.money webapp — several products under one integrated UI, the official frontend of the Sky Ecosystem, fully designed and developed by Jetstream with input from the founder, executives, and third-party design consultants. The webapp fronts a protocol ecosystem holding $19.8B TVL (per Sky's official analytics), whose Savings module alone holds $5.5B, behind the #3 and #4 largest stablecoins (USDS + DAI, $12.8B combined).",
+        "Delivered multi-network support across four L2s (Arbitrum, Base, Optimism, Unichain), wallet integrations, geo-specific site builds, analytics integration, and a \"linked actions\" feature chaining product features together.",
+        "Oversaw the voting-portal refactor and deployment accompanying the MKR→SKY token conversion (vote.sky.money) — a migration that has since converted 90%+ of a ~$1.2B token supply; assisted the MakerDAO→Sky rebrand and relaunch (Sept 2024, covered by CoinDesk and Bloomberg).",
+        "Published the open-source Widgets package (self-contained UI modules: Savings, Rewards, Upgrade, Trade, Balances) and Hooks package (React hooks interfacing with Sky smart contracts).",
+        "Led the team that delivered the production frontend for Sky's LLM chatbot — an assistant answering questions about the Sky Ecosystem and webapp; the LLM itself was built and managed by a separate organization. Shipped to production (non-U.S. markets).",
+        "Built the documentation-corpus pipeline (bash + tagging system) that generated the chatbot's LLM training data, frontend FAQ modules, and tooltips.",
+        "Managed the complete migration of Sky Ecosystem frontend infrastructure from a third-party consultant to in-house — Vercel hosting, Cloudflare proxy, AWS subgraph hosting — and administered PostHog, Mixpanel, Google Analytics, and cookie3 analytics, Sentry monitoring, TRM Labs sanctions compliance, and MaxMind VPN blocking.",
+        "Designed and deployed the subgraph architecture indexing Sky protocol transactions for historical data in the UI.",
+        "Coordinated third-party protocol integrations including Morpho, Curve, Pendle, and Spark, plus a governance collaboration with Boardroom.",
+        "Spoke at the DevConnect 2025 App Town Hall (Buenos Aires) on the UI/UX challenges of the rebrand and webapp release; delivered dozens of internal demos and workshops."
+      ]
+    },
+    {
+      "name": "Sky Protocol (formerly MakerDAO)",
+      "position": "Founder & Facilitator — DUX (Development and UX) Core Unit",
+      "location": "Remote",
+      "startDate": "2021",
+      "endDate": "2023",
+      "summary": "Founded the DUX Core Unit and the DX team; as Facilitator, combined hands-on software engineering with managing the team's presence in the MakerDAO ecosystem.",
+      "highlights": [
+        "Ran a publicly ratified engineering budget (~$1.9M/yr at peak) through governance-approved proposals, org-wide product updates, and feature releases.",
+        "Led development and maintenance of the MakerDAO Governance Portal — the voting interface where token holders manage on-chain governance; the portal lineage has carried ~1,350 governance polls and 250+ executive votes, with ~$400M of voting power participating today.",
+        "Developed the frontend design system used across DAO-wide applications."
+      ]
+    },
+    {
+      "name": "Sky Protocol (formerly MakerDAO)",
+      "position": "Developer → Senior Developer",
+      "location": "Remote",
+      "startDate": "2018",
+      "endDate": "2021",
+      "summary": "Frontend and full-stack development across protocol products.",
+      "highlights": [
+        "Built the dai.js SDK and plugins (the original service-based SDK for the protocol — 130K+ lifetime npm downloads), the gov-polling-db blockchain indexer (built before subgraphs existed), the OasisDEX MCD CDP portal, the migrate-dashboard, and testchain tooling.",
+        "On duty during the March 12, 2020 market crash — an event that saw $8.32M liquidated for zero DAI — deploying an emergency auctions dashboard (Auction Helper) to combat the opportunistic liquidation bots responsible.",
+        "Assisted the Multi-Collateral DAI deployment."
+      ]
+    },
+    {
+      "name": "OrthoFi",
+      "position": "Software Engineer",
+      "startDate": "2016",
+      "endDate": "2018",
+      "summary": "C#, TypeScript, Angular, SQL; grew from individual contributor into leading several new-feature rollouts."
+    },
+    {
+      "name": "University of Denver Library",
+      "position": "Software Developer",
+      "startDate": "2015",
+      "endDate": "2016",
+      "summary": "First professional engineering role."
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Denver",
+      "area": "Emergent Digital Practices",
+      "studyType": "M.A.",
+      "endDate": "2015"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": [
+        "React",
+        "TypeScript",
+        "Dashboard-heavy application design",
+        "DAO-wide design system development",
+        "Angular"
+      ]
+    },
+    {
+      "name": "Web3 / Blockchain",
+      "keywords": [
+        "Smart-contract integration",
+        "Wallet integrations",
+        "Multi-network L2 support",
+        "Subgraph architecture and blockchain indexers",
+        "DeFi governance",
+        "Vault/CDP tooling",
+        "Third-party protocol integrations"
+      ]
+    },
+    {
+      "name": "AI",
+      "keywords": [
+        "Production LLM chatbot frontend delivery",
+        "Documentation-corpus pipeline for LLM training data",
+        "FAQ modules and tooltips",
+        "AI-assisted delivery with coding agents"
+      ]
+    },
+    {
+      "name": "Infrastructure & Data",
+      "keywords": [
+        "Vercel",
+        "Cloudflare",
+        "AWS subgraph hosting",
+        "PostHog",
+        "Mixpanel",
+        "Google Analytics",
+        "cookie3",
+        "Sentry",
+        "TRM Labs",
+        "MaxMind",
+        "SQL"
+      ]
+    },
+    {
+      "name": "Leadership & Delivery",
+      "keywords": [
+        "Co-founded and led a team of 8",
+        "Founded a DAO core unit",
+        "Requirements intake from executives including the founder",
+        "Third-party integration coordination",
+        "JS library/SDK development",
+        "Eight years of fully remote delivery"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Sky.money webapp",
+      "description": "Flagship UI of the Sky Ecosystem; several protocol products under one integrated frontend.",
+      "url": "https://app.sky.money",
+      "keywords": ["React", "TypeScript", "DeFi", "Frontend"],
+      "roles": ["Co-Founder & Team Lead"],
+      "entity": "Jetstream / Sky Protocol"
+    },
+    {
+      "name": "Sky Voting Portal",
+      "description": "Governance voting interface; oversaw the refactor and deployment accompanying the MKR→SKY conversion.",
+      "url": "https://vote.sky.money",
+      "keywords": ["Governance", "On-chain voting", "React"],
+      "entity": "Jetstream / Sky Protocol"
+    },
+    {
+      "name": "Widgets & Hooks packages",
+      "description": "Open-source UI modules and React hooks interfacing with Sky smart contracts.",
+      "url": "https://github.com/jetstreamgg/tarmac",
+      "keywords": ["Open source", "React hooks", "Smart-contract integration"],
+      "entity": "Jetstream"
+    },
+    {
+      "name": "governance-portal-v2",
+      "description": "MakerDAO governance portal built and maintained by the DUX Core Unit.",
+      "url": "https://github.com/skybase-foundation/governance-portal-v2",
+      "keywords": ["Governance", "Frontend", "Design system"],
+      "entity": "DUX Core Unit"
+    },
+    {
+      "name": "dai.js SDK & plugins",
+      "description": "Original service-based SDK for interacting with the protocol (archived). 130K+ lifetime npm downloads.",
+      "url": "https://github.com/sky-ecosystem/dai.js",
+      "keywords": ["SDK", "JavaScript", "Web3"],
+      "entity": "MakerDAO"
+    },
+    {
+      "name": "Auction Helper",
+      "description": "Emergency auctions dashboard deployed during the March 12, 2020 crash.",
+      "url": "https://github.com/b-pmcg/auction-helper",
+      "keywords": ["Dashboard", "DeFi liquidations"],
+      "entity": "MakerDAO"
+    },
+    {
+      "name": "gov-polling-db",
+      "description": "Blockchain indexer for governance polling, built before subgraphs existed.",
+      "url": "https://github.com/sky-ecosystem/gov-polling-db",
+      "keywords": ["Indexer", "SQL", "Blockchain data"],
+      "entity": "MakerDAO"
+    }
+  ],
+  "meta": {
+    "canonical": "https://basswoodcreative.com/resume.json",
+    "version": "v1",
+    "lastModified": "2026-07-08"
+  }
+}
