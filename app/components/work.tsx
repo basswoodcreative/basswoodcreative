@@ -198,7 +198,7 @@ export function Work() {
 
       <section className="component exh" id="ex-bt">
         <div className="exhibit rv">
-          <h3>Black Thursday</h3>
+          <h3>Black Thursday Emergency Operations</h3>
           <div className="dispatch">
             <span className="date">2020-03-12 — DEPLOYED OVERNIGHT</span>
             On the day the market broke, opportunistic bots were winning
