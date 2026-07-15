@@ -155,7 +155,10 @@ export function ProofBand() {
           <div className="val" id="v-wal">
             {fmt(INSTRUMENTS[2].to, 0, "", "")}
           </div>
-          <div className="lbl">Wallets across the Sky ecosystem</div>
+          <div className="lbl">
+            Wallets across the Sky ecosystem, connected through frontends the
+            principal built
+          </div>
           <div className="src silk">
             <a href={ANALYTICS_URL} rel="noopener">
               SRC: OFFICIAL ANALYTICS ↗
