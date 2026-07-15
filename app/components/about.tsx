@@ -15,7 +15,7 @@ export function About() {
           Phil Bain has spent ~11 years as a professional software engineer,
           including eight at Sky Protocol (formerly MakerDAO, 2018–2026), rising
           from developer to co-founder and team lead of Jetstream — the
-          independent Swiss association contracted by the protocol as its
+          independent studio contracted by the protocol as its
           primary UI development team. He works across the full stack — React,
           TypeScript, Next.js — and the infrastructure underneath it (Vercel,
           Cloudflare, AWS), and spoke at the Devconnect 2025 App Town Hall in

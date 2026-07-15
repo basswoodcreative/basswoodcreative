@@ -63,7 +63,7 @@ export default function Resume() {
               Roughly 11 years of professional software development, including
               eight years at Sky Protocol (formerly MakerDAO), 2018–2026 —
               progressing from developer to co-founder and team lead of
-              Jetstream, the independent Swiss association that served as the
+              Jetstream, the independent studio that served as the
               primary UI development team for the Sky Protocol, delivering the
               flagship Sky.money webapp with input from the founder, executives,
               and third-party design consultants.
@@ -145,7 +145,7 @@ export default function Resume() {
           </h4>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted">
             <li>
-              Co-founded and led Jetstream — an independent Swiss association
+              Co-founded and led Jetstream — an independent studio
               contracted by MakerDAO governance as the primary UI development
               team for the Sky Protocol — a team of 8 (5 developers, 1 designer,
               1 QA engineer, 1 project manager); owned architectural decisions,
