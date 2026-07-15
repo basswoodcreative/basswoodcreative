@@ -111,7 +111,7 @@ export function ProofBand() {
   return (
     <section className="component inverted" id="proof" ref={ref}>
       <div className="proof-head">
-        <h2 className="sec">Numbers the interfaces carried.</h2>
+        <h2 className="sec">The numbers these frontends carry.</h2>
         <span className="silk stamp">
           <span className="dot"></span> DATA AS OF {STAMP}
         </span>
