@@ -333,6 +333,17 @@ h2.sec {
 .fig .urlbar .live {
   color: var(--g1);
 }
+a.urlbar {
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+a.urlbar:hover {
+  color: var(--sig);
+}
+.fig .urlbar .ext {
+  margin-left: auto;
+  color: var(--sig);
+}
 .fig img {
   width: 100%;
   display: block;

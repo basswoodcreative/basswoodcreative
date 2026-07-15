@@ -23,9 +23,15 @@ export function Work() {
             ground-up redesign through today&apos;s five-network app.
           </p>
           <figure className="fig" style={{ margin: 0 }}>
-            <div className="urlbar silk">
+            <a
+              className="urlbar silk"
+              href="https://app.sky.money"
+              target="_blank"
+              rel="noopener"
+            >
               <span className="live">●</span> app.sky.money
-            </div>
+              <span className="ext">↗</span>
+            </a>
             <img
               src="/work/sky-money-app.jpg"
               alt="app.sky.money — Balances view of the live Sky.money application"
@@ -57,9 +63,15 @@ export function Work() {
           </p>
           <div className="gov2">
             <figure className="fig" style={{ margin: 0 }}>
-              <div className="urlbar silk">
+              <a
+                className="urlbar silk"
+                href="https://vote.sky.money"
+                target="_blank"
+                rel="noopener"
+              >
                 <span className="live">●</span> vote.sky.money
-              </div>
+                <span className="ext">↗</span>
+              </a>
               <img
                 src="/work/vote-sky-money.jpg"
                 alt="vote.sky.money — Sky Governance Voting Portal, latest executive with 7.02B SKY supporting"
@@ -70,9 +82,15 @@ export function Work() {
               </figcaption>
             </figure>
             <figure className="fig" style={{ margin: 0 }}>
-              <div className="urlbar silk">
+              <a
+                className="urlbar silk"
+                href="https://vote.makerdao.com"
+                target="_blank"
+                rel="noopener"
+              >
                 <span className="live">●</span> vote.makerdao.com
-              </div>
+                <span className="ext">↗</span>
+              </a>
               <img
                 src="/work/vote-makerdao.jpg"
                 alt="vote.makerdao.com — legacy Maker Governance Voting Portal, still active"
@@ -157,7 +175,14 @@ export function Work() {
               </p>
             </div>
             <figure className="fig" style={{ margin: 0 }}>
-              <div className="urlbar silk">app.sky.money · non-U.S.</div>
+              <a
+                className="urlbar silk"
+                href="https://app.sky.money"
+                target="_blank"
+                rel="noopener"
+              >
+                app.sky.money · non-U.S.<span className="ext">↗</span>
+              </a>
               <img
                 src="/work/chat-assistant.jpg"
                 alt="The chat assistant widget inside Sky.money: 'Hi, I'm your AI-powered chatbot assistant' with suggested questions about Sky Protocol and USDS"
