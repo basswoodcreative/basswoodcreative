@@ -630,181 +630,293 @@ a.urlbar:hover {
   color: color-mix(in srgb, var(--pn-fg) 62%, var(--pn));
 }
 
-/* ---------- services: contextual flip ---------- */
-.svc {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  perspective: 1200px;
+/* ---------- services: the probe instrument (replaces the flip) ----------
+   Three group bands; each a horizontal bus carrying its three outcomes on
+   ring pads + fixed-geometry corner connectors (nothing scales, true 45°).
+   Probing confirms a call: pad lights, OK settles, counters tick to
+   3/3 CONFIRMED and 9/9 CALLS CONFIRMED. ≤760px: vertical anatomy. */
+.seclabel-row { display: flex; align-items: baseline; gap: 12px; margin: 0 0 12px; }
+.seclabel-row .seclabel { margin: 0; }
+.seclabel-row .cont { margin-left: auto; color: var(--mut); opacity: 0.6; transition: opacity 0.2s; }
+.seclabel-row .cont.done {
+  opacity: 1;
+  background: linear-gradient(90deg, var(--g1), var(--g2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-@media (max-width: 760px) {
-  .svc {
-    grid-template-columns: 1fr;
-  }
-}
-.card3d {
+/* entry: hairline + one drop feeding the first band */
+.manifold { position: relative; height: 17px; margin-top: 30px; }
+.manifold .h { position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--trace); }
+.manifold .d { position: absolute; top: 1px; bottom: 0; left: 34px; width: 1px; background: var(--trace); }
+.nets { display: grid; grid-template-columns: 1fr; gap: 24px; }
+.netcol {
   position: relative;
-  min-height: 330px;
-}
-.flipper {
-  position: absolute;
-  inset: 0;
-  transform-style: preserve-3d;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .flipper {
-    transition: transform 0.55s cubic-bezier(0.4, 0.1, 0.2, 1);
-  }
-  .card3d:nth-child(2) .flipper {
-    transition-delay: 0.06s;
-  }
-  .card3d:nth-child(3) .flipper {
-    transition-delay: 0.12s;
-  }
-}
-.svc:hover .flipper,
-.svc.flipped .flipper {
-  transform: rotateX(180deg);
-}
-.face {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  background: var(--raised);
   border: 1px solid var(--bd);
   border-radius: var(--r);
+  padding: 18px 20px 12px;
+  transition: border-color 0.3s;
+}
+/* the feeder between stacked bands */
+.netcol:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  left: 34px;
+  top: -25px;
+  width: 1px;
+  height: 24px;
+  background: var(--trace);
+}
+.netcol.continuous { border-color: color-mix(in srgb, var(--g1) 45%, var(--bd)); }
+.netcol > header h3 { margin: 0 0 4px; font-size: 1.16rem; }
+.netcol > header .frag { margin: 0; font-size: 0.84rem; line-height: 1.5; color: var(--mut); max-width: 62ch; }
+.netlist {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 22px;
+}
+/* the band bus: one horizontal 1px div-line the three pads sit on */
+.netlist::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5px;
+  height: 1px;
+  background: var(--trace);
+  transform-origin: left;
+}
+.net { position: relative; padding: 35px 0 6px; cursor: default; border-radius: 4px; }
+/* pad: ring + core on the bus, fixed-integer divs */
+.net .pad {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 11px;
+  height: 11px;
+  border: 1px solid var(--trace-lit);
+  border-radius: 50%;
   background: var(--raised);
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
+  transition: border-color 0.15s;
 }
-.face.back {
-  transform: rotateX(180deg);
+.net .pad i {
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: var(--trace-lit);
+  opacity: 0.55;
+  transition: background 0.15s, opacity 0.15s;
 }
-@media (prefers-reduced-motion: reduce) {
-  .flipper {
-    transition: none;
-  }
-  .face {
-    transition: opacity 0.2s ease;
-  }
-  .svc:hover .flipper,
-  .svc.flipped .flipper {
-    transform: none;
-  }
-  .svc:hover .face.front,
-  .svc.flipped .face.front {
-    opacity: 0;
-    pointer-events: none;
-  }
-  .face.back {
-    transform: none;
-    opacity: 0;
-  }
-  .svc:hover .face.back,
-  .svc.flipped .face.back {
-    opacity: 1;
-  }
+/* hot rail segment belongs to the mobile anatomy */
+.net .hot { display: none; }
+/* corner connector: fixed 24×35 SVG, 1:1 coordinates — cannot stretch */
+.net .jog { position: absolute; left: 0; top: 11px; width: 24px; height: 35px; display: block; }
+.net .jogm { display: none; }
+.net svg path { fill: none; stroke-width: 1; }
+.net svg .jb { stroke: var(--trace-lit); }
+.net svg .jh {
+  stroke: url(#svcgradj);
+  stroke-width: 1.3;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
 }
-.stub {
+.net .copy { margin-left: 26px; min-width: 0; }
+.net .copy strong {
   display: block;
-  width: 100%;
-  height: 30px;
-  margin-bottom: 12px;
-  flex: none;
-}
-.stub path {
-  stroke: var(--trace-lit);
-  stroke-width: 1;
-  fill: none;
-}
-.stub circle {
-  fill: none;
-  stroke: var(--trace-lit);
-}
-.stub .spulse {
-  stroke: var(--g1);
-  stroke-width: 1.5;
-  fill: none;
-  stroke-dasharray: 0.12 1.88;
-  stroke-dashoffset: 0.12;
-  visibility: hidden;
-}
-/* pulse fires ONLY on the hovered / tapped card */
-@media (prefers-reduced-motion: no-preference) {
-  .card3d:hover .face.back .spulse,
-  .svc.flipped .card3d.active .face.back .spulse {
-    visibility: visible;
-    animation: stubfire 0.6s linear forwards;
-    animation-delay: 0.3s;
-  }
-}
-@keyframes stubfire {
-  from {
-    stroke-dashoffset: 0.12;
-  }
-  to {
-    stroke-dashoffset: -1;
-  }
-}
-.face h3 {
-  margin: 0 0 6px;
-  font-size: 1.02rem;
   font-weight: 600;
-}
-.face p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--mut);
-}
-/* contextual back content: which group's items show depends on data-hover */
-.face.back .gset {
-  display: none;
-  font-size: 0.86rem;
-  line-height: 1.5;
-  color: var(--mut);
-}
-.face.back .gset b {
+  font-size: 0.94rem;
+  line-height: 1.4;
   color: var(--fg);
-  font-weight: 600;
-  display: block;
-  margin-bottom: 6px;
+  padding-right: 36px;
 }
-.svc[data-hover="build"] .gset.g-build {
-  display: block;
+.net .copy p { margin: 4px 0 0; font-size: 0.845rem; line-height: 1.5; color: var(--mut); transition: color 0.2s; }
+.net .stat { position: absolute; top: 35px; right: 0; text-align: right; }
+.net .stat .idx { color: var(--mut); opacity: 0.8; transition: opacity 0.2s; }
+.net .stat .ok {
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  letter-spacing: 0.2em;
+  background: linear-gradient(90deg, var(--g1), var(--g2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-.svc[data-hover="integrate"] .gset.g-integrate {
-  display: block;
+@media (prefers-reduced-motion: no-preference) {
+  .net .hot { transition: transform 0.24s cubic-bezier(0.3, 0.7, 0.3, 1); }
+  .net svg .jh { transition: stroke-dashoffset 0.2s ease 0.04s; }
+  .net .stat .ok { transition: opacity 0.24s, letter-spacing 0.24s; }
 }
-.svc[data-hover="advise"] .gset.g-advise {
-  display: block;
+/* hover/focus = instant local response; .tested = the remembered state */
+.net:hover .hot, .net:focus-visible .hot, .net.tested .hot { transform: scaleY(1); }
+.net.tested:not(:hover):not(:focus-visible) .hot { opacity: 0.45; }
+.net:hover .pad, .net:focus-visible .pad, .net.tested .pad { border-color: var(--g1); }
+.net:hover .pad i, .net:focus-visible .pad i, .net.tested .pad i {
+  background: linear-gradient(135deg, var(--g1), var(--g2));
+  opacity: 1;
 }
-/* group label: flexed to the card bottom so it reads as a label, not a
-   title; full strength only on the hovered/active card */
-.face.back .grouptag {
-  color: var(--mut);
-  order: 99;
-  margin: auto 0 0;
-  padding-top: 12px;
+.net:hover svg .jh, .net:focus-visible svg .jh, .net.tested svg .jh { stroke-dashoffset: 0; }
+.net.tested:not(:hover):not(:focus-visible) svg .jh { opacity: 0.55; }
+.net:hover .copy p, .net:focus-visible .copy p { color: var(--fg); }
+.net.tested .stat .ok { opacity: 1; letter-spacing: 0.07em; }
+.net.tested .stat .idx { opacity: 0; }
+.netfoot {
+  margin-top: 12px;
+  padding-top: 11px;
   border-top: 1px solid var(--bd);
-  text-align: right;
-  opacity: 0.35;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--mut);
+}
+.netfoot .cnt { opacity: 0; transition: opacity 0.2s; }
+.netfoot .cnt.show { opacity: 0.9; }
+.netfoot .term {
+  margin-left: auto;
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--trace-lit);
+  border-radius: 50%;
+  position: relative;
+  background: var(--raised);
+}
+.netfoot .term i {
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: var(--trace-lit);
+  opacity: 0.5;
+  transition: background 0.15s, opacity 0.15s;
+}
+.netcol.continuous .term { border-color: var(--g1); }
+.netcol.continuous .term i { background: linear-gradient(135deg, var(--g1), var(--g2)); opacity: 1; }
+/* exit rail below the bands — completes at 9/9 */
+.netsum { position: relative; height: 44px; }
+.netsum .d { position: absolute; top: 0; height: 12px; left: 34px; width: 1px; background: var(--trace); }
+.netsum .h { position: absolute; left: 0; right: 0; top: 12px; height: 1px; background: var(--trace); }
+.netsum .sweep {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 12px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--g1), var(--g2));
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.netsum .sumline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 2px;
+}
+.netsum .lab {
+  opacity: 0;
+  background: linear-gradient(90deg, var(--g1), var(--g2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+/* RETEST: only exists once earned — no chrome until 9/9 */
+.netsum .retest {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 2px 6px;
+  color: var(--mut);
+  opacity: 0.55;
+  cursor: pointer;
+  border-radius: 4px;
   transition: opacity 0.2s, color 0.2s;
 }
-.card3d:hover .face.back .grouptag,
-.card3d.active .face.back .grouptag {
-  opacity: 1;
-  color: var(--sig);
+.netsum .retest:hover { opacity: 1; color: var(--sig); }
+.svcsec.allgreen .netsum .retest { display: inline-block; }
+@media (prefers-reduced-motion: no-preference) {
+  .netsum .sweep { transition: transform 0.5s ease; }
+  .netsum .lab { transition: opacity 0.4s ease 0.3s; }
 }
-.svc[data-hover="build"] .grouptag::after {
-  content: "BUILD";
+.svcsec.allgreen .netsum .sweep { transform: scaleX(1); }
+.svcsec.allgreen .netsum .lab { opacity: 1; }
+/* the entrance cascade — once, when the section first scrolls in */
+@media (prefers-reduced-motion: no-preference) {
+  .svcsec.post .netlist::before { animation: buson 0.5s ease both; }
+  .svcsec.post .net svg .jb {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: jogdraw 0.4s ease both;
+    animation-delay: calc(var(--i) * 70ms);
+  }
+  .svcsec.post .net .pad { animation: padin 0.3s ease both; animation-delay: calc(var(--i) * 70ms + 120ms); }
 }
-.svc[data-hover="integrate"] .grouptag::after {
-  content: "INTEGRATE";
+@keyframes buson {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
-.svc[data-hover="advise"] .grouptag::after {
-  content: "ADVISE";
+@keyframes railgrow {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
 }
+@keyframes jogdraw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes padin {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .net .hot, .net svg .jh, .net .stat .ok, .netsum .sweep, .netsum .lab,
+  .netfoot .cnt, .netcol { transition-duration: 1ms !important; }
+}
+/* ── ≤760px: vertical anatomy — rail down the left, items stacked ── */
+@media (max-width: 760px) {
+  .nets { gap: 16px; }
+  .netcol { padding: 20px 18px 12px; }
+  .netcol:not(:first-child)::before { left: 23px; }
+  .manifold { display: none; }
+  .netlist { display: block; margin-top: 12px; }
+  .netlist::before {
+    left: 5px;
+    right: auto;
+    top: 0;
+    bottom: 6px;
+    height: auto;
+    width: 1px;
+    transform-origin: top;
+  }
+  .net { padding: 12px 0; }
+  .net .pad { top: 17px; }
+  .net .hot {
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 0;
+    width: 1px;
+    height: 23px;
+    background: linear-gradient(180deg, var(--g1), var(--g2));
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  .net .jog { display: none; }
+  .net .jogm { display: block; position: absolute; left: 11px; top: 14px; width: 20px; height: 17px; }
+  .net .copy { margin-left: 34px; }
+  .net .stat { top: 12px; }
+  .netsum .d { left: 23px; }
+  @media (prefers-reduced-motion: no-preference) {
+    .svcsec.post .netlist::before { animation-name: railgrow; }
+  }
+}
+
 
 /* ---------- contact ---------- */
 .contact h2.sec {
