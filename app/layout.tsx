@@ -40,6 +40,11 @@ export const metadata: Metadata = {
     description:
       "Frontend consultancy for teams whose interfaces carry real user funds.",
   },
+  alternates: {
+    types: {
+      "application/rss+xml": "https://basswoodcreative.com/rss.xml",
+    },
+  },
 };
 
 export const viewport: Viewport = {

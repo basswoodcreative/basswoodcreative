@@ -30,6 +30,12 @@ export function Footer() {
           >
             philbain.com
           </a>
+          <a
+            href="/rss.xml"
+            className="transition-colors hover:text-foreground"
+          >
+            RSS
+          </a>
         </div>
       </div>
     </footer>

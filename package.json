@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/fetch-metrics.mjs",
+    "prebuild": "node scripts/fetch-metrics.mjs && node scripts/build-feed.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
@@ -21,7 +21,13 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "gray-matter": "^4.0.3",
+    "rehype-stringify": "^10.0.1",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-rehype": "^11.1.2",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "unified": "^11.0.5"
   }
 }

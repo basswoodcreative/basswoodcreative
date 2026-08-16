@@ -1080,6 +1080,110 @@ a.urlbar:hover {
 /* ══════════ end of board styles ══════════ */
 
 /* /resume prints as the shareable document: chrome hidden, ink-friendly */
+/* ---------- insights prose (markdown-rendered essay bodies) ---------- */
+.prose {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+.prose > * + * {
+  margin-top: 1.25em;
+}
+.prose h2 {
+  margin-top: 2.25em;
+  font-size: 1.5rem;
+}
+.prose h3 {
+  margin-top: 1.75em;
+  font-size: 1.2rem;
+}
+.prose a {
+  text-decoration: underline;
+  text-decoration-color: var(--bd);
+  text-underline-offset: 4px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+.prose a:hover {
+  text-decoration-color: currentColor;
+}
+.prose ul,
+.prose ol {
+  padding-left: 1.4em;
+}
+.prose ul {
+  list-style: disc;
+}
+.prose ol {
+  list-style: decimal;
+}
+.prose li + li {
+  margin-top: 0.5em;
+}
+.prose blockquote {
+  border: 1px solid var(--bd);
+  border-left: 3px solid var(--g1);
+  border-radius: var(--r);
+  background: var(--raised);
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  color: var(--mut);
+}
+.prose blockquote > * + * {
+  margin-top: 0.75em;
+}
+.prose code {
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 0.85em;
+  background: var(--sf);
+  border: 1px solid var(--bd);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+}
+.prose pre {
+  border: 1px solid var(--bd);
+  border-radius: var(--r);
+  background: var(--raised);
+  padding: 16px 18px;
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+.prose pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+}
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--bd);
+  border-radius: var(--r);
+}
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--bd);
+  margin: 2.5em auto;
+  max-width: 120px;
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+.prose th,
+.prose td {
+  border: 1px solid var(--bd);
+  padding: 8px 12px;
+  text-align: left;
+}
+.prose th {
+  font-family: var(--font-plex-mono), monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--mut);
+}
+
 @media print {
   .print-hidden {
     display: none !important;

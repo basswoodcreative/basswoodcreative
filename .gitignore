@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# generated at prebuild by scripts/build-feed.mjs
+public/rss.xml
+public/sitemap.xml
