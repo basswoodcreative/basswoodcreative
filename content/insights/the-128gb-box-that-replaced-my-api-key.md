@@ -5,41 +5,41 @@ date: 2026-08-16
 pillar: AI & Agent-Assisted Development
 ---
 
-*I run [basswood creative](https://basswoodcreative.com), a consulting practice for local AI infrastructure — builds exactly like this one. If your team is weighing local against the API bill, that's the conversation the practice exists for.*
+*I run [Basswood Creative](https://basswoodcreative.com), a consulting practice for frontend development and local AI infrastructure — builds exactly like this one. If your team is weighing local against the API bill, that's the conversation the practice exists for.*
 
-## 1. The box in the next room
+## 1. The agent in the next room
 
 <!-- IMG-1 · the box on the shelf -->
 
-There's a box in the room next to my office. No monitor, no keyboard, maybe ten watts at idle. It answers to `strix`. It runs a 120B-class model.
+There's an agent in the room next to my office. It runs a 120B-class model and it answers to `strix`. 
 
 It also codes — and because **Qwen 3.8** landed this week, the model that's been in everyone's group chat for the last few days, that's exactly what it's been doing.
 
-This is the story of how that box got built, from a retail mini PC to a fully local, fully open-source coding agent. It's the first post of this blog. Local AI infrastructure is the focus of my consulting practice, **[basswood creative](https://basswoodcreative.com)**, and this is my own reference build — documented the way I'd hand it over on a client project. Including the mistakes.
+This is the story of how it got built, from a retail mini PC to a fully local, fully open-source coding agent. Local AI infrastructure is the focus of my consulting practice, **[basswood creative](https://basswoodcreative.com)**, and this is my own reference build — documented the way I'd hand it over on a client project. Including the mistakes.
 
 Why local at all? Four reasons, in the order they usually come up:
 
 - **Your code never leaves the house.** For some teams, that's the entire argument.
-- **No per-token bill, no rate limits, no vendor outage.** The box keeps working when the internet doesn't.
+- **No per-token bill, no rate limits, no vendor outage.** My favorite part: the box keeps working when the internet doesn't.
 - **The model is yours to configure** — context, thinking, sampling. You don't wait for the provider to ship a knob.
 - **The hardware finally runs models worth using.** This is the new one, and it's why the post exists now.
 
-Which hardware, and why? The trick is one phrase: **unified memory**. The Bosgame M5 pairs AMD's Ryzen AI Max+ 395 — "Strix Halo" — with 128 GB of LPDDR5X that the iGPU can address directly. After the tuning trick I'll show you in section 6, the GPU can use nearly the whole thing. That's what lets a 15-watt-class integrated GPU hold 70B–120B-class models and still move tokens at interactive speed.
+Which hardware, and why? The trick is one phrase: **unified memory**. The Bosgame M5 pairs AMD's Ryzen AI Max+ 395 — "Strix Halo" — with 128 GB of memory that the iGPU can address directly. After the tuning trick I'll show you in section 6, the GPU can use nearly the whole thing. That's what lets a 15-watt-class integrated GPU hold 70B–120B-class models and still move tokens at interactive speed.
 
-And the "fully open source" claim, stated up front so the finale can pay it off: Fedora Server, Podman, llama.cpp, llama-swap, Open WebUI, Tailscale, Qwen, and Pi. Every layer auditable. And one method runs through every section: **build in layers, and verify each one before you climb.**
+Fully open-source: Fedora Server, Podman, llama.cpp, llama-swap, Open WebUI, Tailscale, Qwen, and Pi. Every layer auditable. And one method runs through every section: **build in layers, and verify each one before you climb.**
 
-Roughly half a day of hands-on work, plus download time. Let's go.
+Roughly half a day of hands-on work, plus download time. LFG.
 
 ## 2. The hardware, in one page
 
-| | |
-|---|---|
-| Machine | Bosgame M5, small form factor |
-| CPU | Ryzen AI Max+ 395 ("Strix Halo") |
-| GPU | Radeon 8060S iGPU (gfx1151), shares system memory |
-| Memory | 128 GB LPDDR5X unified (a 96 GB variant exists — different tuning numbers, same shape) |
-| Storage | NVMe |
-| Price, as purchased | $2,799 USD |
+|                     |                                                   |
+| ------------------- | ------------------------------------------------- |
+| Machine             | Bosgame M5, small form factor                     |
+| CPU                 | Ryzen AI Max+ 395 ("Strix Halo")                  |
+| GPU                 | Radeon 8060S iGPU (gfx1151), shares system memory |
+| Memory              | 128 GB LPDDR5X unified                            |
+| Storage             | NVMe                                              |
+| Price, as purchased | $2,799 USD                                        |
 
 Three things to know before we start.
 

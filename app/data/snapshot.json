@@ -1,44 +1,24 @@
 {
-  "fetched_at": "2026-08-16T20:42:03.092Z",
+  "fetched_at": "2026-08-21T03:48:29.142Z",
   "source": "info-sky.blockanalitica.com/api/v1",
   "current": {
+    "sky_ecosystem_tvl": 18420529153.9101,
+    "sky_ecosystem_wallet_count": 782679,
+    "sky_savings_rate_tvl": 4705860312.539955,
+    "sky_savings_rate_apy": 0.0352,
+    "total_save": 4911076156.037556,
+    "ssr_depositor_count": 5966
+  },
+  "prev": {
     "sky_ecosystem_tvl": 17954161674.993984,
     "sky_ecosystem_wallet_count": 780929,
     "sky_savings_rate_tvl": 4737237586.3257475,
     "sky_savings_rate_apy": 0.0352,
     "total_save": 4943713638.015095,
-    "ssr_depositor_count": 5896
-  },
-  "prev": {
-    "sky_ecosystem_tvl": 18394832429.492767,
-    "sky_ecosystem_wallet_count": 766567,
-    "sky_savings_rate_tvl": 4733584366.008254,
-    "sky_savings_rate_apy": 0.036,
-    "total_save": 4955727508.62582,
-    "ssr_depositor_count": 5837,
-    "fetched_at": "2026-07-16T03:25:19.871Z"
+    "ssr_depositor_count": 5896,
+    "fetched_at": "2026-08-16T20:42:03.092Z"
   },
   "history": [
-    {
-      "date": "2026-05-09",
-      "total_save": 6087582057.385078
-    },
-    {
-      "date": "2026-05-10",
-      "total_save": 5995559896.136911
-    },
-    {
-      "date": "2026-05-11",
-      "total_save": 5890996299.181326
-    },
-    {
-      "date": "2026-05-12",
-      "total_save": 5865842937.266677
-    },
-    {
-      "date": "2026-05-13",
-      "total_save": 6169056368.391231
-    },
     {
       "date": "2026-05-14",
       "total_save": 5889944232.342571
@@ -417,7 +397,27 @@
     },
     {
       "date": "2026-08-16",
-      "total_save": 4943713638.015095
+      "total_save": 4943307078.447497
+    },
+    {
+      "date": "2026-08-17",
+      "total_save": 4936631681.439721
+    },
+    {
+      "date": "2026-08-18",
+      "total_save": 4937971282.572605
+    },
+    {
+      "date": "2026-08-19",
+      "total_save": 4888864091.34609
+    },
+    {
+      "date": "2026-08-20",
+      "total_save": 4913228961.579785
+    },
+    {
+      "date": "2026-08-21",
+      "total_save": 4911076156.037556
     }
   ]
 }
