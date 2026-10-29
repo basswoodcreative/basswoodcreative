@@ -18,6 +18,7 @@ import { useEffect, useRef } from "react";
 // Phil's review at the B3 preview.
 const SECTIONS = [
   "hero",
+  "problem",
   "proof",
   "services",
   "work",
@@ -37,7 +38,7 @@ const SECTIONS = [
 // distance from 0.09 / 0.91 giving each lane its inward variation. The
 // exhibit alternation is the prototype's; the three kept sections continue
 // the alternating rhythm into contact's center.
-const FR = [0.5, 0.09, 0.91, 0.13, 0.87, 0.13, 0.87, 0.15, 0.85, 0.13, 0.87, 0.13, 0.87, 0.5];
+const FR = [0.5, 0.87, 0.09, 0.91, 0.13, 0.87, 0.13, 0.87, 0.15, 0.85, 0.13, 0.87, 0.13, 0.87, 0.5];
 
 // Leader traces: Phil-blessed module mappings ONLY (2026-07-07, incl. the
 // CAT/FLIP correction — Black Thursday predates Liquidations 2.0).

@@ -1,6 +1,7 @@
 import { Nav } from "./components/nav";
 import { Board } from "./components/board";
 import { Hero } from "./components/hero";
+import { Problem } from "./components/problem";
 import { ProofBand } from "./components/proof-band";
 import { Services } from "./components/services";
 import { Work } from "./components/work";
@@ -19,6 +20,7 @@ export default function Home() {
       <main className="flex-1">
         <Board>
           <Hero />
+          <Problem />
           <ProofBand />
           <Services />
           <Work />
