@@ -28,7 +28,7 @@ export function TrackRecord() {
         <div className="exhibit rv">
           <h3>Sky.money — the flagship UI</h3>
           <p className="blurb">
-            The interface of the $19.8B Sky ecosystem — team-led from the
+            The interface of the $17.9B Sky ecosystem — team-led from the
             ground-up redesign through today&apos;s five-network app.
           </p>
           <figure className="fig" style={{ margin: 0 }}>

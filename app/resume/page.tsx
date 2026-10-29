@@ -174,11 +174,11 @@ export default function Resume() {
               input from the founder, executives, and third-party design
               consultants. The webapp fronts a protocol ecosystem holding{" "}
               <strong className="font-medium text-foreground">
-                $19.8B TVL
+                $17.9B TVL
               </strong>{" "}
               (per Sky&apos;s official analytics), whose Savings module alone
               holds{" "}
-              <strong className="font-medium text-foreground">$5.5B</strong>,
+              <strong className="font-medium text-foreground">$4.5B</strong>,
               behind the{" "}
               <strong className="font-medium text-foreground">
                 #3 and #4 largest stablecoins (USDS + DAI, $12.8B combined)
