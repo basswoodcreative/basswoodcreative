@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Nav } from "../components/nav";
 import { Footer } from "../components/footer";
-import { EMAIL, MAILTO } from "../data/site";
+import { EMAIL, LINKEDIN_URL, MAILTO } from "../data/site";
 import { PrintButton } from "./print-button";
 
 export const metadata: Metadata = {
   title: { absolute: "Phil Bain — Resume" },
   description:
-    "Resume of Phil Bain, independent software consultant — protocol-grade frontends via Basswood Creative. Eight years at Sky Protocol (formerly MakerDAO).",
+    "Resume of Phil Bain, independent software consultant — agentic engineering for software teams via Basswood Creative. Eight years at Sky Protocol (formerly MakerDAO).",
 };
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
@@ -42,8 +42,8 @@ export default function Resume() {
                 Phil Bain
               </h1>
               <p className="mt-2 font-medium">
-                Independent Software Consultant — Protocol-grade frontends ·
-                Basswood Creative
+                Independent Software Consultant — Agentic engineering for
+                software teams · Basswood Creative
               </p>
               <p className="mt-3 text-sm text-muted">
                 <a href={MAILTO} className="hover:text-foreground">
@@ -51,7 +51,9 @@ export default function Resume() {
                 </a>{" "}
                 · <ExtLink href="https://basswoodcreative.com">basswoodcreative.com</ExtLink> ·{" "}
                 <ExtLink href="https://philbain.com">philbain.com</ExtLink> ·{" "}
-                GitHub: <ExtLink href="https://github.com/b-pmcg">github.com/b-pmcg</ExtLink> · Remote
+                GitHub: <ExtLink href="https://github.com/b-pmcg">github.com/b-pmcg</ExtLink> ·{" "}
+                LinkedIn: <ExtLink href={LINKEDIN_URL}>linkedin.com/in/basswood-creative-b16367445</ExtLink> ·
+                Colorado · Remote
               </p>
             </div>
             <PrintButton />
@@ -69,10 +71,12 @@ export default function Resume() {
               and third-party design consultants.
             </p>
             <p>
-              Through Basswood Creative, builds protocol-grade frontends for
-              teams whose interfaces carry real user funds: governance
-              dashboards, on-chain position management, SDKs, and smart-contract
-              integration in React and TypeScript.
+              Through Basswood Creative, helps software teams get real output
+              from coding agents: diagnosing how a team actually uses them, then
+              fixing the harness, the workflows and the infrastructure
+              underneath. Has built almost entirely through coding agents for
+              the last two years, including a fully local, open-source agent
+              stack on his own hardware, documented in public.
             </p>
             <p>
               Has already shipped AI in a DeFi product — leading the team that
@@ -82,14 +86,23 @@ export default function Resume() {
               data.
             </p>
             <p>
-              Available for fractional frontend lead, project-based, and
-              retainer engagements — remote, with eight years of remote delivery
-              behind it. Booking engagements from September 2026.
+              Available for Agent Workflow Reviews, team build-outs and
+              fractional agentic-engineering lead engagements — remote, or
+              on-site in the Denver area.
             </p>
           </div>
 
           <SectionHeading>Core Skills</SectionHeading>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted">
+            <li>
+              <span className="font-medium text-foreground">
+                Agentic engineering
+              </span>{" "}
+              — daily practice through Claude Code and other coding agents for
+              two years; harness configuration and debugging (Pi, llama-swap);
+              local inference on open-weight models (llama.cpp, Qwen); capacity
+              sizing for concurrent agents
+            </li>
             <li>
               <span className="font-medium text-foreground">Frontend</span> —
               React, TypeScript; dashboard-heavy application design; DAO-wide
