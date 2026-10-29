@@ -8,25 +8,32 @@
 // the pre-paint script in layout.tsx sets.
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
-import { MAILTO, EMAIL } from "../data/site";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { BOOKING, MAILTO, EMAIL } from "../data/site";
 import snapshot from "../data/snapshot.json";
 
 const BUILD_STAMP = `BUILD ${snapshot.fetched_at.slice(0, 10)} · STATIC`;
 
 const ROWS = [
-  { href: "/#proof", label: "Proof" },
   { href: "/#services", label: "Services" },
-  { href: "/#work", label: "Work" },
-  { href: "/#engagements", label: "Engagements" },
-  { href: "/#about", label: "About" },
+  { href: "/diagnostic", label: "Review" },
+  { href: "/#track-record", label: "Track record" },
   { href: "/insights", label: "Insights" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/#about", label: "About" },
 ];
 
-const PAGELINKS = ROWS.filter((r) =>
-  ["Services", "Work", "About", "Insights"].includes(r.label)
-);
+// The bar fits four beside the build stamp and button; the menu has them all.
+const PAGELINKS = ROWS.filter((r) => r.label !== "Track record");
+
+// The theme lives on <html data-mode>, set before paint by layout.tsx; the
+// nav reads it from there rather than keeping a copy in state.
+function subscribeMode(onChange: () => void) {
+  const watcher = new MutationObserver(onChange);
+  watcher.observe(document.documentElement, { attributeFilter: ["data-mode"] });
+  return () => watcher.disconnect();
+}
+const readMode = () => (document.documentElement.dataset.mode === "dark" ? "dark" : "light");
+const serverMode = () => "light" as const;
 
 function Leaf() {
   return (
@@ -47,13 +54,9 @@ function Leaf() {
 
 export function Nav() {
   const [state, setState] = useState<"open" | "closing" | null>(null);
-  const [mode, setMode] = useState<"light" | "dark">("light");
+  const mode = useSyncExternalStore(subscribeMode, readMode, serverMode);
   const openBtn = useRef<HTMLButtonElement>(null);
   const closeBtn = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    setMode(document.documentElement.dataset.mode === "dark" ? "dark" : "light");
-  }, []);
 
   const open = () => {
     setState("open");
@@ -78,7 +81,6 @@ export function Nav() {
     try {
       localStorage.setItem("mode", m);
     } catch {}
-    setMode(m);
   };
 
   return (
@@ -99,7 +101,7 @@ export function Nav() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-muted transition-colors hover:text-foreground"
+                  className="whitespace-nowrap text-sm text-muted transition-colors hover:text-foreground"
                 >
                   {link.label}
                 </Link>
@@ -109,11 +111,11 @@ export function Nav() {
               {BUILD_STAMP}
             </span>
             <a
-              href={MAILTO}
+              href={BOOKING}
               className="btn-p hidden whitespace-nowrap sm:inline-flex"
               style={{ padding: "8px 16px", fontSize: "0.85rem" }}
             >
-              Start a conversation
+              Book a check-up
             </a>
             <button
               ref={openBtn}

@@ -1,4 +1,4 @@
-import { EMAIL, MAILTO, X_HANDLE, X_URL } from "../data/site";
+import { EMAIL, LINKEDIN_URL, MAILTO, X_HANDLE, X_URL } from "../data/site";
 
 export function Footer() {
   return (
@@ -9,12 +9,19 @@ export function Footer() {
       </p>
       <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-between gap-4 px-6 py-6 text-sm text-muted sm:flex-row sm:px-12">
         <p>&copy; {new Date().getFullYear()} Basswood Creative</p>
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
           <a
             href={MAILTO}
             className="transition-colors hover:text-foreground"
           >
             {EMAIL}
+          </a>
+          <a
+            href={LINKEDIN_URL}
+            rel="noopener"
+            className="transition-colors hover:text-foreground"
+          >
+            LinkedIn
           </a>
           <a
             href={X_URL}

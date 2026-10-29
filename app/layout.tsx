@@ -21,24 +21,23 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://basswoodcreative.com"),
   title: {
-    default: "Basswood Creative — Protocol-grade frontends",
+    default: "Basswood Creative — Agentic engineering for software teams",
     template: "%s — Basswood Creative",
   },
   description:
-    "Frontend consultancy for teams whose interfaces carry real user funds — dApps, governance portals, on-chain position management, and LLM integrations. Built on eight years inside MakerDAO / Sky Protocol.",
+    "Agentic engineering for software teams: a two-week, fixed-fee review of how your team uses coding agents, with the top fixes shipped as a pull request.",
   openGraph: {
     type: "website",
     siteName: "Basswood Creative",
     url: "https://basswoodcreative.com",
-    title: "Basswood Creative — Protocol-grade frontends",
+    title: "Basswood Creative — Agentic engineering for software teams",
     description:
-      "Frontend consultancy for teams whose interfaces carry real user funds — dApps, governance portals, on-chain position management, and LLM integrations.",
+      "Agentic engineering for software teams: a two-week, fixed-fee review of how your team uses coding agents, with the top fixes shipped as a pull request.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Basswood Creative — Protocol-grade frontends",
-    description:
-      "Frontend consultancy for teams whose interfaces carry real user funds.",
+    title: "Basswood Creative — Agentic engineering for software teams",
+    description: "Your team has the coding agents. I make them pay off.",
   },
   alternates: {
     types: {
