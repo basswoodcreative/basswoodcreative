@@ -66,7 +66,7 @@ ${items}
 </rss>
 `;
 
-  const pages = ["", "/insights", "/resume", ...posts.map((p) => `/insights/${p.slug}`)];
+  const pages = ["", "/diagnostic", "/insights", "/resume", ...posts.map((p) => `/insights/${p.slug}`)];
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${pages.map((p) => `  <url><loc>${SITE}${p}</loc></url>`).join("\n")}
