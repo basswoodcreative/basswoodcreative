@@ -1,18 +1,16 @@
 "use client";
 
-// Nav lockup (leaf mark + silk wordmark, truthful build stamp) and the
-// choreographed menu overlay — which doubles as the mobile nav (closes
-// the no-nav-below-640 critical from the Phase 5 audit). Escape closes,
-// focus returns to the opener. The theme seg is the manual mode toggle:
-// it writes localStorage("mode") and flips the same data-mode attribute
-// the pre-paint script in layout.tsx sets.
+// Nav lockup (leaf mark + silk wordmark) and the choreographed menu
+// overlay — which doubles as the mobile nav (closes the no-nav-below-640
+// critical from the Phase 5 audit). Escape closes, focus returns to the
+// opener. The theme seg is the manual mode toggle: it writes
+// localStorage("mode") and flips the same data-mode attribute the
+// pre-paint script in layout.tsx sets. The build stamp left in Phase A
+// (Phil: clutter).
 
 import Link from "next/link";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { BOOKING, MAILTO, EMAIL } from "../data/site";
-import snapshot from "../data/snapshot.json";
-
-const BUILD_STAMP = `BUILD ${snapshot.fetched_at.slice(0, 10)} · STATIC`;
 
 const ROWS = [
   { href: "/#services", label: "Services" },
@@ -22,8 +20,10 @@ const ROWS = [
   { href: "/#about", label: "About" },
 ];
 
-// The bar fits four beside the build stamp and button; the menu has them all.
-const PAGELINKS = ROWS.filter((r) => r.label !== "Track record");
+// The bar shows all five from 1024px; narrower, it fits four beside the
+// button and Track record lives in the menu, which has them all.
+const PAGELINKS = ROWS;
+const WIDE_ONLY = "Track record";
 
 // The theme lives on <html data-mode>, set before paint by layout.tsx; the
 // nav reads it from there rather than keeping a copy in state.
@@ -101,15 +101,12 @@ export function Nav() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="whitespace-nowrap text-sm text-muted transition-colors hover:text-foreground"
+                  className={`${link.label === WIDE_ONLY ? "hidden lg:inline " : ""}whitespace-nowrap text-sm text-muted transition-colors hover:text-foreground`}
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
-            <span className="silk hidden border-l border-border pl-5 text-muted lg:inline">
-              {BUILD_STAMP}
-            </span>
             <a
               href={BOOKING}
               className="btn-p hidden whitespace-nowrap sm:inline-flex"
@@ -163,7 +160,6 @@ export function Nav() {
                 Dark
               </button>
             </span>
-            <span>{BUILD_STAMP}</span>
           </p>
         </div>
       </div>
