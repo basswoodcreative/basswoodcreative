@@ -2,7 +2,7 @@
 // vault, "Phase 5 / 54"). Recaptures the live-product screenshots for the
 // Selected Work exhibits and stages them in design/assets/ + public/work/.
 // Captures are claims: eyeball each output before committing, and update
-// the FIG. captions' dates in app/components/work.tsx to the capture date.
+// the FIG. captions' dates in app/components/track-record.tsx to the capture date.
 //
 // Needs Playwright:
 //   npm i -D playwright && npx playwright install chromium
@@ -73,4 +73,4 @@ for (const t of TARGETS) {
 }
 
 await browser.close();
-console.log("done — review each image, then update the FIG. capture dates in work.tsx");
+console.log("done — review each image, then update the FIG. capture dates in track-record.tsx");

@@ -116,10 +116,7 @@ export function ProofBand() {
           <span className="dot"></span> DATA AS OF {STAMP}
         </span>
       </div>
-      <p className="standfirst">
-        With eight years inside Sky Protocol, Basswood Creative&apos;s
-        principal led the team that delivered Sky&apos;s flagship UI.
-      </p>
+      {/* no standfirst of its own: the Track record intro above says it */}
       <div className="instruments">
         <div className="inst">
           <div className="val" id="v-tvl">

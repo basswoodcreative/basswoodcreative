@@ -13,32 +13,28 @@ import { useEffect, useRef } from "react";
 // behavior. Reduced-motion keeps the board AND the pulse: it is
 // input-driven (scrubbed by scroll), never self-animating.
 
-// Section order on the board. Engagements / About / Insights weren't in the
-// prototype flow but carry approved copy — kept as components, flagged for
-// Phil's review at the B3 preview.
+// Section order on the board: the Phase A homepage, top to bottom (app/
+// page.tsx; bwc vault, 65 §2). The bus routes between consecutive entries,
+// so this list must follow the page.
 const SECTIONS = [
   "hero",
   "problem",
-  "proof",
   "services",
-  "work",
+  "engagements",
+  "insights",
+  "track-record",
+  "proof",
   "ex-flagship",
-  "ex-gov",
-  "ex-widgets",
   "ex-llm",
   "ex-bt",
-  "ex-daijs",
-  "engagements",
   "about",
-  "insights",
   "contact",
 ];
 
 // Lane fractions: 0.5 = center; <0.5 left lane, >0.5 right lane, with the
-// distance from 0.09 / 0.91 giving each lane its inward variation. The
-// exhibit alternation is the prototype's; the three kept sections continue
-// the alternating rhythm into contact's center.
-const FR = [0.5, 0.87, 0.09, 0.91, 0.13, 0.87, 0.13, 0.87, 0.15, 0.85, 0.13, 0.87, 0.13, 0.87, 0.5];
+// distance from 0.09 / 0.91 giving each lane its inward variation. The bus
+// alternates sides from the hero's exit to contact's center.
+const FR = [0.5, 0.87, 0.09, 0.91, 0.13, 0.87, 0.09, 0.91, 0.15, 0.85, 0.13, 0.5];
 
 // Leader traces: Phil-blessed module mappings ONLY (2026-07-07, incl. the
 // CAT/FLIP correction — Black Thursday predates Liquidations 2.0).
