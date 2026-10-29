@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Nav } from "../components/nav";
 import { Footer } from "../components/footer";
 import { ClosingCta } from "../components/closing-cta";
-import { BOOKING } from "../data/site";
+import { BOOKING, OG_IMAGE } from "../data/site";
 
 // The front door: the Agent Workflow Review (bwc vault, 65 §3–§4). The URL
 // stays /diagnostic whatever the wedge ends up being called (64 §4).
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     url: "https://basswoodcreative.com/diagnostic",
     title: "Agent Workflow Review — Basswood Creative",
     description: DESCRIPTION,
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",

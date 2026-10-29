@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Nav } from "../../components/nav";
 import { Footer } from "../../components/footer";
 import { formatDate, getAllPosts, getPost, renderPost } from "../../../lib/insights";
+import { OG_IMAGE } from "../../data/site";
 
 export function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }));
@@ -26,6 +27,7 @@ export async function generateMetadata({
       description: post.description,
       url: `https://basswoodcreative.com/insights/${post.slug}`,
       publishedTime: post.date,
+      images: [OG_IMAGE],
     },
   };
 }
