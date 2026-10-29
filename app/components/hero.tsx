@@ -1,8 +1,12 @@
-// Hero chip: two-line display H1 with the gradient full stop, the TRACE
+// Hero chip: two-line display H1 with the gradient full stop, the HARNESS
 // silk line, and the fan-in board art — traces enter from the right, fan
 // through the pads, join a collector, and exit the card bottom at
 // #fan-exit, where the page trunk picks the signal up (board.tsx aligns
-// itself to the exit point). Confirmed by Phil 2026-07-07.
+// itself to the exit point). Confirmed by Phil 2026-07-07; copy reframed
+// for agentic engineering 2026-10-29 (bwc vault, 65 §2.1).
+
+import Link from "next/link";
+import { BOOKING } from "../data/site";
 
 export function Hero() {
   return (
@@ -31,25 +35,30 @@ export function Hero() {
       </div>
       <div className="fore">
         <h1>
-          Protocol-grade
+          Agentic engineering
           <br />
-          frontends<span className="stop">.</span>
+          for software teams<span className="stop">.</span>
         </h1>
         <p className="sub">
-          Basswood Creative builds interfaces users trust with real money —
-          dApps, governance dashboards, and on-chain position management for
-          teams whose frontends carry actual user funds.
+          Your team has the coding agents. I make them pay off: the harness,
+          the workflows, and the infrastructure underneath.
+        </p>
+        <p className="cred">
+          Eight years at Sky (formerly MakerDAO), rising to lead the team
+          behind the flagship app of its $19.8B ecosystem. For the last two,
+          I&apos;ve built almost entirely through coding agents.
         </p>
         <div className="ctas">
-          <a className="btn-p" href="/#contact">
-            Start a conversation
+          <a className="btn-p" href={BOOKING}>
+            Book a free 30-minute check-up
           </a>
-          <a className="btn-g" href="/#proof">
-            See the work ↓
-          </a>
+          <Link className="btn-g" href="/diagnostic">
+            How the review works →
+          </Link>
         </div>
         <p className="silk hint">
-          TRACE, n. — THE PATH A SIGNAL TRAVELS · THE PATH A TRANSACTION TAKES.
+          HARNESS, n. — THE WIRING THAT CARRIES SIGNALS BETWEEN COMPONENTS · THE
+          TOOLING THAT STEERS AN AGENT&apos;S WORK.
         </p>
       </div>
     </section>
