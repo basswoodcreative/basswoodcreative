@@ -477,7 +477,9 @@ a.urlbar:hover {
   fill: var(--g2);
 }
 .hero h1 {
-  font-size: clamp(2.7rem, 6.2vw, 4.4rem);
+  /* capped at 3.9rem (was 4.4rem) so "Agentic engineering" ends before the
+     art's first pad at full card width (Phase A fit, 2026-10-29) */
+  font-size: clamp(2.7rem, 6.2vw, 3.9rem);
   line-height: 1.05;
   margin: 0.2rem 0 18px;
 }
