@@ -1,11 +1,11 @@
 "use client";
 
-// The contact component: dark panel, gradient "real funds", magnetic
-// primary CTA (hover-capable pointers only, disabled under
-// reduced-motion), mono mailto beneath.
+// The contact component: dark panel, gradient "paying for themselves",
+// magnetic primary CTA (hover-capable pointers only, disabled under
+// reduced-motion), mono mailto beneath. Closes /diagnostic too.
 
 import { useEffect, useRef } from "react";
-import { EMAIL, MAILTO } from "../data/site";
+import { BOOKING, EMAIL, MAILTO } from "../data/site";
 
 export function ClosingCta() {
   const magnetRef = useRef<HTMLSpanElement>(null);
@@ -55,12 +55,12 @@ export function ClosingCta() {
   return (
     <section className="component inverted contact" id="contact">
       <h2 className="sec">
-        Have a frontend that carries <span className="amber">real funds</span>{" "}
-        — or one that needs to?
+        Are your coding agents{" "}
+        <span className="amber">paying for themselves</span> yet?
       </h2>
       <span id="magnet" ref={magnetRef}>
-        <a className="btn-p" href={MAILTO}>
-          Start a conversation
+        <a className="btn-p" href={BOOKING}>
+          Book a free 30-minute check-up
         </a>
       </span>
       <br />
