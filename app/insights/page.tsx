@@ -7,7 +7,7 @@ import { formatDate, getAllPosts } from "../../lib/insights";
 export const metadata: Metadata = {
   title: "Insights",
   description:
-    "Essays on protocol frontends, governance UX, and agent-assisted engineering from Basswood Creative.",
+    "Essays on agentic engineering from Basswood Creative: harnesses, workflows and the infrastructure underneath.",
 };
 
 export default function Insights() {
@@ -23,8 +23,9 @@ export default function Insights() {
             Notes from the build.
           </h1>
           <p className="standfirst mt-6 text-lg leading-relaxed">
-            Essays on protocol frontends, governance UX, and agent-assisted
-            engineering — published here first, mirrored to Protocol Grade.
+            Essays on agentic engineering: harnesses, workflows and the
+            infrastructure underneath. Published here, mirrored to Protocol
+            Grade.
           </p>
         </section>
 

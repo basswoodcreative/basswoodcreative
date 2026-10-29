@@ -59,7 +59,7 @@ try {
     <title>Basswood Creative — Insights</title>
     <link>${SITE}/insights</link>
     <atom:link href="${SITE}/rss.xml" rel="self" type="application/rss+xml"/>
-    <description>Essays on protocol frontends, governance UX, and agent-assisted engineering. Published here first, mirrored to Protocol Grade.</description>
+    <description>Essays on agentic engineering: harnesses, workflows and the infrastructure underneath. Published here, mirrored to Protocol Grade.</description>
     <language>en-us</language>
 ${items}
   </channel>
