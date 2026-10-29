@@ -7,6 +7,8 @@ substackUrl: https://protocolgrade.substack.com/p/my-coding-agent-lost-the-plot-
 substackId: 212099365
 ---
 
+*I run [Basswood Creative](https://basswoodcreative.com), an agentic-engineering practice for software teams: the harness, the workflows and the infrastructure underneath, including local builds like this one. If your team is weighing local against the API bill, [start with a free check-up](https://basswoodcreative.com/diagnostic).*
+
 ## Our agent in the field started forgetting things
 
 The [last post](/insights/the-128gb-box-that-replaced-my-api-key) ended on a high note: a Bosgame M5 in the next room, answering to `strix`, serving an OpenAI-compatible API, and Pi — the open-source terminal coding agent — pointed at it for the first fully local coding session. Every prompt, every tool call, every generated token, in the house.
@@ -160,7 +162,7 @@ So: a box that could chat became a box that could *work*. The distance between t
 
 That reconciliation is the real subject of this post. A local model server and a local agent each keep their own books — the server's `-c`, Pi's `contextWindow`, the output caps, the thinking budget — and the pain of the daily-driver phase is almost entirely in making them agree. Nothing here was hard once it was *visible*. The work was making it visible.
 
-Which is also the consulting pitch, made concrete. This handover phase — taming the agent, reconciling the configs, setting the budgets, writing down the failure modes so the next person doesn't rediscover them — is exactly the work that separates a demo from infrastructure, and it's the part of a local-AI build [Basswood Creative](https://basswoodcreative.com) most often gets called in for. If your team's box "worked once" and then got weird, that's a conversation I'd enjoy.
+Which is also the consulting pitch, made concrete. This handover phase — taming the agent, reconciling the configs, setting the budgets, writing down the failure modes so the next person doesn't rediscover them — is exactly the work that separates a demo from infrastructure, and it's the part of a local-AI build I'd look at first on any team's box. If yours "worked once" and then got weird, [that's a conversation I'd enjoy](https://basswoodcreative.com/diagnostic).
 
 ## Epilogue: one last gadget
 

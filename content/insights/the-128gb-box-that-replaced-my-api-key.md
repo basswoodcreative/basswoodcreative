@@ -7,7 +7,7 @@ substackUrl: https://protocolgrade.substack.com/p/the-128-gb-box-that-replaced-m
 substackId: 211467560
 ---
 
-*I run [Basswood Creative](https://basswoodcreative.com), a consulting practice for frontend development and local AI infrastructure — builds exactly like this one. If your team is weighing local against the API bill, that's the conversation the practice exists for.*
+*I run [Basswood Creative](https://basswoodcreative.com), an agentic-engineering practice for software teams: the harness, the workflows and the infrastructure underneath, including local builds like this one. If your team is weighing local against the API bill, [start with a free check-up](https://basswoodcreative.com/diagnostic).*
 
 ## 1. The agent in the next room
 
@@ -17,7 +17,7 @@ There's an agent in the room next to my office. It runs a 120B-class model and i
 
 It also codes — and because **Qwen 3.8** landed this week, the model that's been in everyone's group chat for the last few days, that's exactly what it's been doing.
 
-This is the story of how it got built, from a retail mini PC to a fully local, fully open-source coding agent. Local AI infrastructure is the focus of my consulting practice, **[basswood creative](https://basswoodcreative.com)**, and this is my own reference build — documented the way I'd hand it over on a client project. Including the mistakes.
+This is the story of how it got built, from a retail mini PC to a fully local, fully open-source coding agent. Local AI infrastructure is one layer of what my consulting practice, **[Basswood Creative](https://basswoodcreative.com)**, builds for teams, and this is my own reference build — documented the way I'd hand it over on a client project. Including the mistakes.
 
 Why local at all? Four reasons, in the order they usually come up:
 
@@ -383,6 +383,6 @@ A Windows mini PC became a headless Fedora appliance. Half the RAM became 124 Gi
 
 The bigger point: local LLMs crossed from "hobby" to "infrastructure." A unified-memory box like this is a **repeatable reference design** — same shape, different size — and this post is the blueprint.
 
-Which is, in the end, the consulting pitch. This build is exactly the kind of work **basswood creative** exists to do for teams that are tired of guessing — the workload audit, the hardware selection, the build, and the handover with runbooks. If your team is weighing local against API — or local *and* API — the first conversation is cheap, and the answer is usually specific. Start at [basswoodcreative.com](https://basswoodcreative.com).
+Which is, in the end, the consulting pitch. This build is exactly the kind of work **Basswood Creative** exists to do for teams that are tired of guessing — the workload audit, the hardware selection, the build, and the handover with runbooks. If your team is weighing local against API — or local *and* API — the first conversation is free, and the answer is usually specific. [Book a check-up at basswoodcreative.com](https://basswoodcreative.com/diagnostic).
 
 If this was useful, subscribe — the next post picks up where this one stops: the tracing and metrics stack that lives on the same box, a long-context A/B, or the honest "what I'd do differently."

@@ -8,7 +8,7 @@ substackId: 222342648
 ---
 > Moving long coding-agent sessions off a laptop and onto a neocloud-like server that stays up. Assembled from parts anyone can go and get.
 
-*I run [Basswood Creative](https://basswoodcreative.com/), a consulting practice for frontend development and local AI infrastructure — builds exactly like this one. If your team is weighing local against the API bill, that’s the conversation the practice exists for.*
+*I run [Basswood Creative](https://basswoodcreative.com), an agentic-engineering practice for software teams: the harness, the workflows and the infrastructure underneath, including local builds like this one. If your team is weighing local against the API bill, [start with a free check-up](https://basswoodcreative.com/diagnostic).*
 
 ![Neocloud at home meme](/insights/we-have-neocloud-at-home/neocloud-at-home-meme.jpg)
 
