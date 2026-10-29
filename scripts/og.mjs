@@ -40,8 +40,8 @@ const html = `<!doctype html>
     letter-spacing: .16em; color: #ECEDEF;
   }
   h1 {
-    position: absolute; left: 72px; top: 236px;
-    font-size: 92px; font-weight: 600; letter-spacing: -0.015em;
+    position: absolute; left: 72px; top: 232px;
+    font-size: 80px; font-weight: 600; letter-spacing: -0.015em;
     line-height: 1.04; color: #ECEDEF;
   }
   h1 .stop {
@@ -56,6 +56,8 @@ const html = `<!doctype html>
 </style></head>
 <body>
   <svg class="traces" viewBox="0 0 1200 630" fill="none" aria-hidden="true">
+    <!-- shifted 180px right in Phase A so the longer headline clears the pads -->
+    <g transform="translate(180 0)">
     <g stroke="#33353B" stroke-width="1.5">
       <path d="M1200 90 H960 L900 150 H790"/>
       <path d="M1200 210 H1020 L960 270 H790"/>
@@ -74,6 +76,7 @@ const html = `<!doctype html>
     <circle cx="781" cy="270" r="5.5" fill="#DB2777"/>
     <circle cx="672" cy="270" r="3.5" fill="#33353B"/>
     <circle cx="672" cy="512" r="3.5" fill="#33353B"/>
+    </g>
   </svg>
   <div class="wordmark">
     <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="1.5">
@@ -82,7 +85,7 @@ const html = `<!doctype html>
     </svg>
     BASSWOOD CREATIVE
   </div>
-  <h1>Protocol-grade<br>frontends<span class="stop">.</span></h1>
+  <h1>Agentic engineering<br>for software teams<span class="stop">.</span></h1>
   <div class="url">BASSWOODCREATIVE.COM</div>
 </body></html>`;
 
