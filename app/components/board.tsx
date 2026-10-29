@@ -33,8 +33,9 @@ const SECTIONS = [
 
 // Lane fractions: 0.5 = center; <0.5 left lane, >0.5 right lane, with the
 // distance from 0.09 / 0.91 giving each lane its inward variation. The bus
-// alternates sides from the hero's exit to contact's center.
-const FR = [0.5, 0.87, 0.09, 0.91, 0.13, 0.87, 0.09, 0.91, 0.15, 0.85, 0.13, 0.5];
+// alternates sides from the hero's exit to contact's center, and its first
+// jog goes left, as it always has (Phil, 2026-10-29).
+const FR = [0.5, 0.09, 0.91, 0.13, 0.87, 0.13, 0.91, 0.15, 0.85, 0.13, 0.87, 0.5];
 
 // Leader traces: Phil-blessed module mappings ONLY (2026-07-07, incl. the
 // CAT/FLIP correction — Black Thursday predates Liquidations 2.0).
