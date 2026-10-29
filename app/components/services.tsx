@@ -9,7 +9,8 @@
 // Wording = the calls/confirmed system (Phil's pick); group silk labels
 // removed (Phil: titles + fragments carry the groups). RETEST appears only
 // at 9/9. Replaces the contextual flip (rounds 4–5). Record: vault
-// "Phase 5 / 55". Traces are fixed-scale — nothing stretches.
+// "Phase 5 / 55". Traces are fixed-scale — nothing stretches. Copy refilled
+// for agentic engineering 2026-10-29 (bwc vault, 65 §2.3).
 
 import { useEffect, useRef, useState } from "react";
 
@@ -30,80 +31,80 @@ const GROUPS: {
   items: { id: string; jog: Jog; lead: string; body: string }[];
 }[] = [
   {
-    group: "build",
-    title: "Build",
-    frag: "Flagship dApp UIs, governance dashboards, design systems your frontends actually follow.",
+    group: "harness",
+    title: "Harness",
+    frag: "The instructions, tools and guardrails your agents work inside.",
     range: "01–03",
     items: [
       {
         id: "01",
         jog: "straight",
-        lead: "A fractional frontend lead",
-        body: "senior ownership of your flagship UI and direct collaboration with founders, without adding full-time headcount.",
+        lead: "Instructions your agents actually follow",
+        body: "a shared CLAUDE.md / AGENTS.md architecture that stays lean as the codebase grows, instead of one bloated file nobody trusts.",
       },
       {
         id: "02",
         jog: "up",
-        lead: "A flagship dApp your users trust with real funds",
-        body: "designed, built, and wired to your smart contracts end to end, in React and TypeScript.",
+        lead: "Agents that can see your systems",
+        body: "skills and MCP servers for your internal tools, docs and data, so agents stop guessing at context they can't reach.",
       },
       {
         id: "03",
         jog: "down",
-        lead: "Complex on-chain positions made legible and safe",
-        body: "vault and collateral management UIs in the mold of Multi-Collateral DAI CDP tooling.",
+        lead: "Guardrails you can measure",
+        body: "tool permissions, cost limits and an eval harness, so you know what an agent may do and whether a change made it better.",
       },
     ],
   },
   {
-    group: "integrate",
-    title: "Integrate",
-    frag: "Smart-contract integration, LLM features that ship, data layers that stay verifiable.",
+    group: "workflows",
+    title: "Workflows",
+    frag: "How your team and its agents ship together.",
     range: "04–06",
     items: [
       {
         id: "04",
         jog: "up",
-        lead: "An LLM chatbot or AI assistant live inside your product",
-        body: "from the team lead who shipped the production frontend for Sky's chatbot and built the documentation pipeline that generated its training data.",
+        lead: "Review that keeps up",
+        body: "feedback sensors, CI agents and PR-size rules, so agent output arrives reviewable instead of burying the people who merge it.",
       },
       {
         id: "05",
         jog: "straight",
-        lead: "Your protocol connected to the wider ecosystem",
-        body: "smart-contract integration, including other platforms' contracts: Morpho, Curve, Pendle, and Spark are on the record.",
+        lead: "One way of working across the team",
+        body: "a hands-on workshop on your own codebase, then 30 days of office hours while the habits set.",
       },
       {
         id: "06",
         jog: "down",
-        lead: "An SDK/library layer for your protocol",
-        body: "so integrators and internal teams can build on it without touching raw contracts.",
+        lead: "A harness that stays current",
+        body: "models change monthly and harness assumptions go stale; a fractional lead keeps yours tuned, measured and re-evaluated.",
       },
     ],
   },
   {
-    group: "advise",
-    title: "Advise",
-    frag: "Agent-assisted delivery, org-level AI integration, web3 frontend best practice.",
+    group: "infrastructure",
+    title: "Infrastructure",
+    frag: "Where your agents run, and what they cost.",
     range: "07–09",
     items: [
       {
         id: "07",
         jog: "down",
-        lead: "Web3 best practices, from someone who has lived them",
-        body: "dApp and wallet UX, governance rollouts, multi-network architecture, geo/compliance handling, and the operational habits of a top protocol, drawn from eight years shipping inside one.",
+        lead: "Local, hybrid or hosted, by workload",
+        body: "open-weight models on your own hardware for routine work, frontier APIs for the hard parts, routed by task.",
       },
       {
         id: "08",
         jog: "up",
-        lead: "Your engineering team getting real output from coding agents",
-        body: "hands-on optimization of agent integrations and workflows, drawn from an agent-assisted engineering practice on protocol software.",
+        lead: "Capacity math before the purchase order",
+        body: "how many concurrent agents a box really serves, worked out from KV-cache headroom rather than the biggest model that fits.",
       },
       {
         id: "09",
         jog: "straight",
-        lead: "An engineer who thinks in product, not tickets",
-        body: "scope, UX tradeoffs, and ship-or-cut calls weighed like an owner — eight years of turning protocol requirements into product people actually use.",
+        lead: "Handed over, not hosted",
+        body: "spec, build and a tested runbook your team owns: the method from my own reference build, documented in public.",
       },
     ],
   },
@@ -203,10 +204,10 @@ export function Services() {
           CONFIRMATIONS {total}/9
         </span>
       </div>
-      <h2 className="sec">Protocol to pixels, end to end.</h2>
+      <h2 className="sec">The harness, the workflows, the infrastructure.</h2>
       <p className="standfirst">
-        One senior engineer across the whole surface — from the contract call
-        to the pixel that carries it.
+        One engineer across every layer an agent touches, from the instructions
+        it reads to the machine it runs on.
       </p>
       <div className="manifold" aria-hidden="true">
         <i className="h" />
