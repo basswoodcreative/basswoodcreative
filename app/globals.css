@@ -453,9 +453,9 @@ a.urlbar:hover {
   height: 100%;
   display: block;
 }
-/* below 960px the card is too narrow for the copy and the art side by
+/* below 860px the card is too narrow for the copy and the art side by
    side, so the art dims behind the text as it always has on phones */
-@media (max-width: 959px) {
+@media (max-width: 859px) {
   .heroart {
     opacity: 0.5;
   }
@@ -498,12 +498,6 @@ a.urlbar:hover {
   margin: 0;
   font-size: 1.02rem;
 }
-.hero .cred {
-  color: var(--mut);
-  max-width: 58ch;
-  margin: 14px 0 0;
-  font-size: 0.86rem;
-}
 .ctas {
   display: flex;
   gap: 12px;
@@ -540,10 +534,6 @@ a.urlbar:hover {
 }
 .btn-g:hover {
   border-color: var(--sig);
-}
-.hero .hint {
-  margin-top: 30px;
-  color: var(--mut);
 }
 
 /* ---------- proof ---------- */

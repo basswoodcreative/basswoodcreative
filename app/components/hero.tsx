@@ -1,12 +1,13 @@
-// Hero chip: two-line display H1 with the gradient full stop, the HARNESS
-// silk line, and the fan-in board art — traces enter from the right, fan
+// Hero chip: two-line display H1 with the gradient full stop, one tagline,
+// and the fan-in board art — traces enter from the right, fan
 // through the pads, join a collector, and exit the card bottom at
 // #fan-exit, where the page trunk picks the signal up (board.tsx aligns
 // itself to the exit point). Confirmed by Phil 2026-07-07; copy reframed
 // for agentic engineering 2026-10-29 (bwc vault, 65 §2.1). The longer copy
 // needed room, so the traces' runs from the right border are 70 units
-// shorter (pads, collector and exit sit further right) and the silk line
-// breaks after its "·" (Phil, 2026-10-29).
+// shorter (pads, collector and exit sit further right). The credential line
+// and the HARNESS definition line left after Phil's first pass (65, "Phil's
+// feedback"): one tagline only.
 
 import Link from "next/link";
 import { BOOKING } from "../data/site";
@@ -46,11 +47,6 @@ export function Hero() {
           Your team has the coding agents. I make them pay off: the harness,
           the workflows, and the infrastructure underneath.
         </p>
-        <p className="cred">
-          Eight years at Sky (formerly MakerDAO), rising to lead the team
-          behind the flagship app of its $19.8B ecosystem. For the last two,
-          I&apos;ve built almost entirely through coding agents.
-        </p>
         <div className="ctas">
           <a className="btn-p" href={BOOKING}>
             Book a free 30-minute check-up
@@ -59,11 +55,6 @@ export function Hero() {
             How the review works →
           </Link>
         </div>
-        <p className="silk hint">
-          HARNESS, n. — THE WIRING THAT CARRIES SIGNALS BETWEEN COMPONENTS ·
-          <br />
-          THE TOOLING THAT STEERS AN AGENT&apos;S WORK.
-        </p>
       </div>
     </section>
   );
