@@ -20,7 +20,7 @@ const RUNGS: { name: string; tagline: string; body: string; link?: { href: strin
   },
   {
     name: "Fractional lead",
-    tagline: "About a day a week.",
+    tagline: "Part-time, sized to your needs.",
     body: "Ongoing ownership of your agent setup as models and tools change: monthly measurement, tool evaluations, and a harness that doesn't go stale.",
   },
 ];
@@ -64,11 +64,6 @@ export function Engagements() {
             </div>
           ))}
         </div>
-        <p className="mt-10 max-w-2xl text-sm leading-relaxed text-muted">
-          Custom builds (internal agents, tools, MCP servers) are scoped as
-          projects, and local or hybrid infrastructure comes as a module. Remote
-          by default; on-site in the Denver area.
-        </p>
       </div>
     </section>
   );
