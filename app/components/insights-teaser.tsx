@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { formatDate, getAllPosts } from "../../lib/insights";
 
-// Practice in public: the essays are the method shown on Phil's own systems,
-// and the only on-direction proof the site has yet (bwc vault, 65 §2.5).
+// The method, in writing: the essays show the method on Phil's own systems
+// and are the only on-direction proof the site has yet (bwc vault, 65 §2.5).
 export function InsightsTeaser() {
   const posts = getAllPosts().slice(0, 4);
 
@@ -13,7 +13,7 @@ export function InsightsTeaser() {
           Insights
         </p>
         <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
-          The method, in public.
+          The method, in writing.
         </h2>
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted">
           How I work, shown on my own systems: the builds, the failures and the
