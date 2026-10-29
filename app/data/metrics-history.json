@@ -18,5 +18,15 @@
     "sky_savings_rate_apy": 0.0352,
     "total_save": 4931607480.39777,
     "ssr_depositor_count": 5903
+  },
+  {
+    "month": "2026-10",
+    "fetched_at": "2026-10-29T22:04:17.352Z",
+    "sky_ecosystem_tvl": 17901992140.31929,
+    "sky_ecosystem_wallet_count": 809772,
+    "sky_savings_rate_tvl": 4560498894.976569,
+    "sky_savings_rate_apy": 0.038,
+    "total_save": 4759063427.758077,
+    "ssr_depositor_count": 6112
   }
 ]
