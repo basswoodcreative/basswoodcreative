@@ -43,3 +43,10 @@ next-env.d.ts
 # generated at prebuild by scripts/build-feed.mjs
 public/rss.xml
 public/sitemap.xml
+
+# Substack sync (scripts/substack-sync.py): local Python env and backups.
+# The cookie itself lives outside the repo (~/.config/substack/).
+/.venv/
+/.substack/
+__pycache__/
+cookies.json

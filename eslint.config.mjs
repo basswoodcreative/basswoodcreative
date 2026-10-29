@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Python env for scripts/substack.py (urllib3 ships a .js worker).
+    ".venv/**",
   ]),
 ]);
 
