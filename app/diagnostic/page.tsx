@@ -127,7 +127,7 @@ export default function Diagnostic() {
     <div className="flex min-h-screen flex-col font-sans">
       <Nav />
       <main className="flex-1">
-        <section className="component mt-14">
+        <section className="component">
           <span className="silk seclabel">ENGAGEMENTS</span>
           <h1 className="text-4xl tracking-tight sm:text-5xl">Agent Workflow Review</h1>
           <p className="mt-4 text-xl font-medium tracking-tight">

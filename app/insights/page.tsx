@@ -17,7 +17,7 @@ export default function Insights() {
     <div className="flex min-h-screen flex-col font-sans">
       <Nav />
       <main className="flex-1">
-        <section className="component mt-14">
+        <section className="component">
           <span className="silk seclabel">INSIGHTS</span>
           <h1 className="text-4xl tracking-tight sm:text-5xl">
             Notes from the build.
