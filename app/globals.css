@@ -453,7 +453,9 @@ a.urlbar:hover {
   height: 100%;
   display: block;
 }
-@media (max-width: 640px) {
+/* below 960px the card is too narrow for the copy and the art side by
+   side, so the art dims behind the text as it always has on phones */
+@media (max-width: 959px) {
   .heroart {
     opacity: 0.5;
   }
