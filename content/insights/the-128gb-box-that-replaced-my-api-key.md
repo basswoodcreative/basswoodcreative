@@ -3,13 +3,15 @@ title: The 128 GB box that replaced my API key
 description: A Bosgame M5 with 128 GB of unified memory, turned into a headless Fedora server that runs 70B–120B-class models and drives a fully local, open-source coding agent — every decision, every gotcha.
 date: 2026-08-16
 pillar: AI & Agent-Assisted Development
+substackUrl: https://protocolgrade.substack.com/p/the-128-gb-box-that-replaced-my-api
+substackId: 211467560
 ---
 
 *I run [Basswood Creative](https://basswoodcreative.com), a consulting practice for frontend development and local AI infrastructure — builds exactly like this one. If your team is weighing local against the API bill, that's the conversation the practice exists for.*
 
 ## 1. The agent in the next room
 
-<!-- IMG-1 · the box on the shelf -->
+![strix, the Bosgame M5: a silver mini PC with AMD Radeon Graphics and Ryzen AI Max+ badges, front ports facing the camera, on blue-painted wood](/insights/the-128gb-box-that-replaced-my-api-key/bosgame-m5.jpg)
 
 There's an agent in the room next to my office. It runs a 120B-class model and it answers to `strix`. 
 

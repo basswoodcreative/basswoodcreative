@@ -3,6 +3,8 @@ title: My coding agent lost the plot. So I brought it in for questioning.
 description: The box builds itself; the agent still needs taming. The config that routes Pi through llama-swap, the two context dials that have to agree, the truncation that ate a session — and the fix the agent found in its own logs, once I sat it down and asked the right questions.
 date: 2026-08-20
 pillar: AI & Agent-Assisted Development
+substackUrl: https://protocolgrade.substack.com/p/my-coding-agent-lost-the-plot-so
+substackId: 212099365
 ---
 
 ## Our agent in the field started forgetting things
