@@ -83,7 +83,7 @@ export function TrackRecord() {
                 app.sky.money · non-U.S.<span className="ext">↗</span>
               </a>
               <img
-                src="/work/chat-assistant.jpg"
+                src="/work/chat-assistant-2026-10-30.jpg"
                 alt="The chat assistant panel inside Sky.money answering 'What can I do with USDS?' with save, swap, borrow and transfer options, plus action buttons and rating controls"
                 loading="lazy"
               />

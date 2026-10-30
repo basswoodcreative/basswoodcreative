@@ -7,7 +7,7 @@
 // Needs Playwright:
 //   npm i -D playwright && npx playwright install chromium
 //
-// Not captured here: chat-assistant.jpg — the chatbot ships to non-U.S.
+// Not captured here: chat-assistant-*.jpg — the chatbot ships to non-U.S.
 // markets only and this pipeline runs from a U.S. egress (the app's
 // /ip/status gate also detects VPNs), so that capture is Phil's product
 // screenshot, supplied manually.
