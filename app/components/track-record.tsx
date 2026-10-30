@@ -84,11 +84,11 @@ export function TrackRecord() {
               </a>
               <img
                 src="/work/chat-assistant.jpg"
-                alt="The chat assistant widget inside Sky.money: 'Hi, I'm your AI-powered chatbot assistant' with suggested questions about Sky Protocol and USDS"
+                alt="The chat assistant panel inside Sky.money answering 'What can I do with USDS?' with save, swap, borrow and transfer options, plus action buttons and rating controls"
                 loading="lazy"
               />
               <figcaption className="silk">
-                FIG. 03 — CHAT ASSISTANT · PRODUCT UI · 2026-07-07
+                FIG. 03 — CHAT ASSISTANT · PRODUCT UI · 2026-10-30
               </figcaption>
             </figure>
           </div>
