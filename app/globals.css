@@ -370,7 +370,7 @@ a.urlbar:hover {
 }
 .llm2 {
   display: grid;
-  grid-template-columns: 1fr 224px;
+  grid-template-columns: 1fr 2fr;
   gap: 28px;
   align-items: start;
 }
@@ -379,7 +379,7 @@ a.urlbar:hover {
     grid-template-columns: 1fr;
   }
   .llm2 .fig {
-    max-width: 224px;
+    max-width: none;
   }
 }
 .rack {
